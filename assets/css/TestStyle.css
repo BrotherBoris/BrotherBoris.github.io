@@ -1,13 +1,31 @@
-h1, h2, p, a, h3{font-family: Arial, Helvetica, sans-serif}h1{font-size: 35px;}h2{font-size: 21px;}h3{font-size: 25px;}p,a{font-size: 16px;}ul{list-style: square;}
+
+h1, h2, p, a, h3
+{
+  font-family: Arial, Helvetica, sans-serif
+}
+
+p, a
+{
+  font-size: 16px;
+}
+
+h2
+{
+    font-size: 21px;
+}
+
+ul
+{
+  list-style: circle;
+}
 
 body
 {
-  margin: 0;
   background: #e2e2e2;
 }
-
 .cabeca
 {
+  font-size: 35px;
   background: #b1b1b1;
   text-align: center;
   padding: 25px;
@@ -15,24 +33,9 @@ body
   
 }
 
-.GenericTitle
-{
-  background: #ffffff;
-  /*Margin*/
-  padding-left: 1%;
-  padding-top: 1%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 1%;
-  /*Border*/
-  border-radius: 10px;
-  box-sizing: border-box;
-  border: 5px solid #7f7f7f;
-  text-align: center;
-}
-
 .rodape
 {
+  font-size: 16px;
   background: #b1b1b1;
   text-align: center;
   padding: 25px;
@@ -44,9 +47,9 @@ body
 {
   background: #ffffff;
   width: 60%;
+  /*Margin*/
   padding-left: 1%;
   padding-top: 1%;
-  /*Margin*/
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 1%;
@@ -59,19 +62,22 @@ body
   border-right: 5px solid #7f7f7f;
 }
 
-.NavBox
+.GenericTitle
 {
-  text-align: center;
+  font-size: 25px;
   background: #ffffff;
   /*Margin*/
-  margin-left: 20%;
-  margin-right: 20%;
+  padding-left: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 1%;
-  margin-bottom: 1%;
   /*Border*/
-  width: 50%;
   border-radius: 10px;
   box-sizing: border-box;
-  border-bottom: 5px solid #7f7f7f;
-  border-right: 5px solid #7f7f7f;
+  border: 5px solid #7f7f7f;
+  text-align: center;
 }
+
+
