@@ -42,6 +42,7 @@ body
 
 .contentbox
 {
+  
   background: #ffffff;
   width: 60%;
   padding-left: 1%;
@@ -63,6 +64,7 @@ body
 {
   text-align: center;
   background: #ffffff;
+  padding: 1%;
   /*Margin*/
   margin-left: 20%;
   margin-right: 20%;
@@ -75,3 +77,4 @@ body
   border-bottom: 5px solid #7f7f7f;
   border-right: 5px solid #7f7f7f;
 }
+.NavBox ul{list-style: none ;}
