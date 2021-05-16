@@ -12,7 +12,7 @@ body
   text-align: center;
   padding: 25px;
   border-bottom: 10px solid #7f7f7f;
-  
+  font-size: 35px;
 }
 
 .GenericTitle
@@ -42,7 +42,6 @@ body
 
 .contentbox
 {
-  
   background: #ffffff;
   width: 60%;
   padding-left: 1%;
@@ -59,6 +58,7 @@ body
   border-bottom: 5px solid #7f7f7f;
   border-right: 5px solid #7f7f7f;
 }
+
 
 .NavBox
 {

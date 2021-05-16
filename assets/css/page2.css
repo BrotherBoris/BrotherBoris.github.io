@@ -1,0 +1,80 @@
+h1, h2, p, a, h3{font-family: Arial, Helvetica, sans-serif}h1{font-size: 35px;}h2{font-size: 21px;}h3{font-size: 25px;}p,a{font-size: 16px;}ul{list-style: square;}
+
+body
+{
+  margin: 0;
+  background: #e2e2e2;
+}
+
+.cabeca
+{
+  background: #b1b1b1;
+  text-align: center;
+  padding: 25px;
+  border-bottom: 10px solid #7f7f7f;
+  font-size: 35px;
+}
+
+.GenericTitle
+{
+  background: #ffffff;
+  /*Margin*/
+  padding-left: 1%;
+  padding-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  /*Border*/
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 5px solid #7f7f7f;
+  text-align: center;
+}
+
+.rodape
+{
+  background: #b1b1b1;
+  text-align: center;
+  padding: 25px;
+  text-align: right;
+  border-top: 10px solid #7f7f7f;
+}
+
+.contentbox
+{
+  background: #ffffff;
+  width: 60%;
+  padding-left: 1%;
+  padding-top: 1%;
+  /*Margin*/
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  /*Border*/
+  width: 50%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border-bottom: 5px solid #7f7f7f;
+  border-right: 5px solid #7f7f7f;
+}
+
+
+.NavBox
+{
+  text-align: center;
+  background: #ffffff;
+  padding: 1%;
+  /*Margin*/
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  /*Border*/
+  width: 50%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border-bottom: 5px solid #7f7f7f;
+  border-right: 5px solid #7f7f7f;
+}
+.NavBox ul{list-style: none ;}
