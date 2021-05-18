@@ -90,35 +90,37 @@
 
         <div class="MainContent">
             <p>
-                Apos criar um projeto o editor começara a descompactar e abrir, levando alguns minutos para abrir, e finalmente te levando para o espaço de desenvolvimento. 
+                Apos criar um projeto o editor começara a descompactar e abrir, levando alguns minutos, e finalmente te levando para o espaço de desenvolvimento. 
                 <br> Dependendo do tipo template que você escolheu, você ira ver um tipo de janela, se o template for 3d, uma câmera e uma lâmpada estarão flutuando em um espaço 
-                cinza, está é a janela "SCENE", aqui é onde você vai fazer todas as modificações do cenário e espaço 3d, na aba superior você pode ver as abas nomeadas "Scene", 
-                "Game" e "Asset Store", apertando na aba "Game" vai mudar a tela para a visão da câmera principal do jogo, é esta tela que vai aparecer quando o seu jogo estiver 
-                rodando. A janela "Asset Store" é uma parte mais complicada que vai ficar pro final desse blog, na ultima pagina, mas explicando rapidamente, é um mercado interno 
-                onde usuários podem vender e comprar "assets", ou produtos virtuais, como objetos, personagens, códigos, e animações.
+                cinza, está é a janela <strong>SCENE</strong>, aqui é onde você vai fazer todas as modificações do cenário e espaço 3d, na aba superior você pode ver as abas nomeadas
+                "<strong>Scene</strong>", "<strong>Game</strong>" e "<strong>Asset Store</strong>", apertando na aba Game vai mudar a tela para a visão da câmera principal do jogo, 
+                é esta tela que vai aparecer quando o seu jogo estiver rodando. A janela Asset Store é uma parte mais complicada que vai ficar pro final desse blog, na ultima pagina,
+                mas explicando rapidamente, é um mercado interno onde usuários podem vender e comprar <em>assets</em>, ou produtos virtuais, como objetos, personagens, códigos, e 
+                animações.
             </p>
 
             <p>
-                A esquerda, esta uma janela chamada "Hierarchy" ou hierarquia, aqui é onde todos os objetos(personagens, terreno, inimigos, obstáculos, entidades fantasmas, etc...) 
-                ativas vão ficar, por um exemplo, é aqui onde o objeto do personagem principal estará praticamente 100% do jogo, mas se ele morrer, é normal deletar o seu objeto da 
-                "Hierarchy", apertando o botão direito ira mostrar uma lista onde você tem a opção de criar vários objetos: câmeras, cubos 3d, imagens, luzes, etc.. 
+                A esquerda, esta uma janela chamada <strong>Hierarchy</strong> ou hierarquia, aqui é onde todos os objetos(personagens, terreno, inimigos, obstáculos, entidades 
+                fantasmas, etc...) ativas vão ficar, por um exemplo, é aqui onde o objeto do personagem principal estará praticamente 100% do jogo, mas se ele morrer, é normal 
+                deletar o seu objeto da Hierarchy, apertando o botão direito ira mostrar uma lista onde você tem a opção de criar vários objetos: câmeras, cubos 3d, imagens, luzes, etc.. 
                 <br> Aperte o botão direito e crie um cubo 3d
 
             </p>
 
             <p>
-                Voltando a tela Scene, selecione o cubo 3D e olhe no canto direito, você vai ver uma janela chamada "Inspector", é nessa janela que você vai poder ver e editar todos
-                 os componentes modulares de um objeto. Um bom exemplo de componente é o "Transform", um componente presente em todo objeto dentro da Unity, é graças a ele que você 
-                 consegue colocar e mover os objetos no espaço 3D, esse é um componente padrão que não da para ser removido, outros exemplos de componente são os: "Box Collider"
-                 (Componente que trata das colisões de um objeto"), "Mesh Renderer"(Componente que desenha na tela a forma 3d de um objeto), "RigidBody"(Componente que simula a 
-                 física de um objeto) e "Script"(O componente que carrega um código que pode ser executado quando o objeto esta ativo no jogo). 
-                 <br>È possível adicionar mais componentes na apertando no botão "Add Component"
+                Voltando a tela Scene, selecione o cubo 3D e olhe no canto direito, você vai ver uma janela chamada <strong>Inspector</strong>, é nessa janela que você vai poder 
+                ver e editar todos os componentes modulares de um objeto. Um bom exemplo de componente é o <strong>Transform</strong>, um componente presente em todo objeto dentro
+                da Unity, é graças a ele que você consegue colocar e mover os objetos no espaço 3D, esse é um componente padrão que não da para ser removido, outros exemplos de 
+                componente são os: <strong>Box Collider</strong>(Componente que trata das colisões de um objeto"), <strong>Mesh Renderer</strong>(Componente que desenha na tela a 
+                forma 3d de um objeto), <strong>RigidBody</strong>(Componente que simula a física de um objeto) e <strong>Script</strong>(O componente que carrega um código que pode
+                ser executado quando o objeto esta ativo no jogo). 
+                <br>È possível adicionar mais componentes na apertando no botão <strong>Add Component</strong>
             </p>
 
             <p>
-                Se você olhar na parte inferior, você vai ver uma grande janela chamada "Project", é aqui que você pode olhar, excluir, criar e adicionar "Assets" para o seu jogo, 
-                com a pasta "Assets" sendo a pasta raiz onde você vai adicionar tudo, eu recomendo criar pastas separadas para adicionar cadê tipo de conteúdo, "Prefabs" pra 
-                pré-fabricados, "Scenes" para fazes do jogo, "Scripts" para códigos, etc...
+                Se você olhar na parte inferior, você vai ver uma grande janela chamada <strong>Project</strong>, é aqui que você pode olhar, excluir, criar e adicionar <em>Assets</em>
+                para o seu jogo, com a pasta Assets sendo a pasta raiz onde você vai adicionar tudo, eu recomendo criar pastas separadas para adicionar cadê tipo de conteúdo, <strong>Prefabs</strong> 
+                pra pré-fabricados, <strong>Scenes</strong> para fazes do jogo, <strong>Scripts</strong> para códigos, etc...
                 <br>Crie Duas pastas, uma chamada "Scripts" e outra chamada "Prefabs"  
             </p>
             
@@ -132,28 +134,61 @@
             <p>
                 Na próxima parte desse blog nos iremos aprofundar mais na parte dos Scripts, mas por enquanto vamos ver como encontra mais janelas de funcionalidade e como editar o 
                 layout.
-                <br>Na parte superior do programa, em cima da janela "Hierarchy" e das ferramentas de navegação, você vai ver as abas de "File", "Edit", "Asset", "GameObject", 
-                "Component", "Window" e "Help", essas são abas de utilidades que vão nos ajudar mais pra frente, por enquanto selecione a aba "Window". Dentro do menu drop down 
-                que acabou de aparecer estão todas as janelas do projeto que você vai precisar: Iluminação, Configurações avançadas, Janelas de animação e mais, por enquanto vamos 
-                pegar uma janela bem importante que pode não estar na sua tela atualmente, ela esta dentro de (Window > Windows > Console). Com esta janela, você vai poder fazer 
-                "debugging" ou testes de mesa, se precisar ou acabar fechando alguma janela importante, é só voltar nessa aba.
+                <br>Na parte superior do programa, em cima da janela "Hierarchy" e das ferramentas de navegação, você vai ver as abas de <strong>File</strong>, <strong>Edit</strong>,
+                <strong>Asset</strong>, <strong>GameObject</strong>, <strong>Component</strong>, <strong>Window</strong> e <strong>Help</strong>, essas são abas de utilidades que vão
+                nos ajudar mais pra frente, por enquanto selecione a aba "Window". Dentro do menu drop down que acabou de aparecer estão todas as janelas do projeto que você vai
+                precisar: Iluminação, Configurações avançadas, Janelas de animação e mais, por enquanto vamos pegar uma janela bem importante que pode não estar na sua tela atualmente,
+                ela esta dentro de [Window > Windows > Console]. Com esta janela, você vai poder fazer "debugging" ou testes de mesa, se precisar ou acabar fechando alguma janela 
+                importante, é só voltar nessa aba.
 
             </p>
 
             <p>
                 Agora para tratar do visual do seu editor, ele pode estar meio bagunçado ou lhe dando um pouco de agonia, para customizar ele, você precisa apertar no nome de uma aba
-                 e arrastar para onde você quiser, misturando elas da forma que você preferir, ou se você quiser usar um layout pré-pronto, ou salvar o seu, é só olhar no canto 
-                 superior direito, no botão ao lado de "layers", aqui você pode salvar o seu layout, deleta-lo, ou usar um padrão
+                e arrastar para onde você quiser, misturando elas da forma que você preferir, ou se você quiser usar um layout pré-pronto, ou salvar o seu, é só olhar no canto 
+                superior direito, no botão ao lado de <strong>layers</strong>, aqui você pode salvar o seu layout, deleta-lo, ou usar um padrão
             </p>
 
+            <p>
+                Exportar e importar packages é muito importante, pois é a melhor forma de mover códigos, modelos entre outros, de projeto em projeto, e é a forma utilizado pelo editor
+                da unity, quando você compra um pack de assets ou uma ferramenta, sem falar que você pode criar o seu próprio packge com códigos básicos para acelerar o começo de um
+                projeto, por isso é bem importante saber usar essa utilidade.
+                Para Criar um Packge é preciso primeiro ter algum asset, dessa maneira precisamos criar um nova pasta que vai conter tudo oque nos queremos que seja incluído no
+                package(um packge consegue incluir varias pastas, e ate tudo oque esta no projeto), crie uma pasta chamada "Itens", apos isso abra ela e apete com o botão direito
+                para abrir o menu de contexto e aperte "Create", apos isso selecione a opção "Material"[Create > Material]. Apos criar o material, mude a sua cor(qualquer uma) 
+                usando a janela do inspector. Arraste o Material para o cubo 3D criado anteriormente e depois arraste o cubo de dentro da Hierarchy para a pasta itens, criando 
+                um pré-fabricado. Agora que nos temos dois assets, vamos criar um packge, aperte com o botão direito dentro do project e selecione "Export Package", dependendo
+                do lugar em que você usou o menu de contexto, diferentes opções para adicionar no package apareceram, selecione apenas a pasta itens, crie o package, o nomeie 
+                e apague a pasta itens
+            </p>
+
+            <p>
+                Agora, Para importar um package ha duas maneiras, arrasta-lo de uma pasta dentro do seu computador para dentro do projeto, ou comprar um asset pack da unity e 
+                importa-lo pela loja. Peque o asset que você criou anteriormente e o arraste para dentro do projeto, selecione tudo oque você quiser importar e pronto!
+            </p>
         </div>
 
+        <div class="ImageBox">
+            <div class="row">
+                <div class="column"><img src="assets/img/Exporting.PNG" alt="Export PCG" class="Responsive"></div>
+                <div class="column"><img src="assets/img/Importing.PNG" alt="Import PCG" class="Responsive"></div>
+            </div>
+        </div>
+
+        <div class="MainContent">
+            <p>
+                Esses foram Passos bem básicos do editor Unity, eu recomendo que você explore e veja mais um pouco do editor, uma aprendizagem boa acontece quando um individuo tem a
+                vontade de olhar e mexer por conta própria.
+                Prossiga para a Pagina de "Programação na API Unity" para ver como programar na unity ou "Asset store e passos finais" para ver como se utiliza a asset store ou como
+                 se faz a build de um projeto.
+            </p>
+        </div>
 
         <div class="NavBox">
             <nav>
                 <ul>
                     <li><a href="index.html">Pagina principal</a></li>
-                    <li><a href="unityapi.html">Programação na APi Unity</a></li>
+                    <li><a href="unityapi.html">Programação na API Unity</a></li>
                     <li><a href="unitystorebuild.html">Asset store e passos finais</a></li>
                 </ul>
             </nav>
