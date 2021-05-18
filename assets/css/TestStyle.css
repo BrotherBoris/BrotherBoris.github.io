@@ -1,83 +1,13 @@
-
-h1, h2, p, a, h3
-{
-  font-family: Arial, Helvetica, sans-serif
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 40%;
+  padding: 5px;
 }
 
-p, a
-{
-  font-size: 16px;
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
-
-h2
-{
-    font-size: 21px;
-}
-
-ul
-{
-  list-style: circle;
-}
-
-body
-{
-  background: #e2e2e2;
-}
-.cabeca
-{
-  font-size: 35px;
-  background: #b1b1b1;
-  text-align: center;
-  padding: 25px;
-  border-bottom: 10px solid #7f7f7f;
-  
-}
-
-.rodape
-{
-  font-size: 16px;
-  background: #b1b1b1;
-  text-align: center;
-  padding: 25px;
-  text-align: right;
-  border-top: 10px solid #7f7f7f;
-}
-
-.contentbox
-{
-  background: #ffffff;
-  width: 60%;
-  /*Margin*/
-  padding-left: 1%;
-  padding-top: 1%;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  /*Border*/
-  width: 50%;
-  border-radius: 10px;
-  box-sizing: border-box;
-  border-bottom: 5px solid #7f7f7f;
-  border-right: 5px solid #7f7f7f;
-}
-
-.GenericTitle
-{
-  font-size: 25px;
-  background: #ffffff;
-  /*Margin*/
-  padding-left: 1%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 1%;
-  /*Border*/
-  border-radius: 10px;
-  box-sizing: border-box;
-  border: 5px solid #7f7f7f;
-  text-align: center;
-}
-
-
