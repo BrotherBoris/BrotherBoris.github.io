@@ -4,7 +4,8 @@
         <title>Programação na API Unity</title>
         <meta charset="utf-8" />
         <link rel="icon" href="assets/img/eye.png">
-        <link rel="stylesheet" href="assets/css/estilo.css">
+        <link rel="stylesheet" href="assets/css/index.css">
+        <link rel="stylesheet" href="assets/css/page2.css">
     </head>
     <body>
         <div class="cabeca">
@@ -13,7 +14,63 @@
             </h1>
         </div>
 
+        <div class="MainContent">
+            <p>
+                Agora que nos sabemos como usar e navegar pelo Editor Unity podemos nos aprofundar na parte de programação, e para fazer da maneira correta, vamos começar
+                aprendendo como criar, modificar e adicionar <em>Scripts</em> a objetos, como utilizar alguma das implementações mais importantes da API, como 
+                "<strong>Game Object</strong>" e <strong>Quaternions</strong>, e por fim, como criar e utilizar "<strong>Scriptable Objects</strong>".
+            </p>
 
+            <p>
+                Antes de começarmos é altamente recomendável você ter o <a href="https://docs.unity3d.com/ScriptReference/" target="_blank" rel="external">manual da API Unity</a> aberto em mãos, ou que apenas de uma olhada em mãos, ele é bem escrito e
+                informativo por si mesmo, cheio de exemplos de implementações.
+            </p>
+
+            <p>
+                Muito bem, com o editor aberto, aperte o botão direito do mouse dentro da janela do project e selecione "<strong>C# Script</strong>" na seção de 
+                "<strong>Create</strong>" [Create>C#Script] e o nomeie "<em>PlayerController</em>"(é importante lembrar que quando estamos criando um script, estamos 
+                basicamente criando uma nova classe e não podendo colocar um espaço entre as palavras), assim criando um novo componente que executara o código contido 
+                dentro quando um objeto estiver sendo simulado, nesse caso o objeto sendo o nosso player, e o código fazendo ele andar quando nos pressionarmos alguma tecla.
+            </p>
+
+            <p>
+                Quando criamos um Script na Unity, por padrão ele é designado como "<strong>MonoBehaviour</strong>", que é um tipo de classe que esta implementada no source 
+                code, por padrão é possível instanciar as funções da API dentro dela e pode ser utilizada para "<strong>quase</strong>" qualquer coisa.
+                <br>Apos criar o Script crie um cubo 3D que será o nosso player, o nomeie "<em>Player</em>" e arraste o script recém criado para o cubo na janela Scene, ou 
+                selecione o cubo, e na janela do Inspector, aperte o botão Add Component e digite o nome do script que você quer adicionar, nesse casso 
+                "<em>PlayerController</em>".
+            </p>
+
+            <p>
+                Agora estamos prontos para "colocar a mão na massa", para começar a programar, precisamos abrir o ambiente de desenvolvimento, aperte o botão direito na 
+                janela do Project e selecione "Open C# Project".
+                <br>Antes de prosseguirmos é bom notar que o ambiente de desenvolvimento que a maioria usa é o "<strong>Visual Studio</strong>", uma ferramenta da Microsoft 
+                com parceria com a Unity, o intellisense(Auto completar) e outras mecânicas desse programa são muito bons, mas ele é surpreendentemente pesado e lento 
+                comparado a outros programas que oferecem a mesma ou uma utilidade maior, por experiência eu recomendo uma ferramenta chamada 
+                "<strong>Visual Studio Code</strong>", também feita pela Microsoft, uma ferramenta de desenvolvimento multi-linguagem mais leve e com mais utilidades e 
+                opções de "<em>add-ons</em>" que o visual Studio padrão. Se você se interessar, de uma olhada 
+                <a href="https://code.visualstudio.com/docs/other/unity" target="_blank" rel="external">no site official</a> para saber como o utilizar com a Unity.
+
+            </p>
+
+        </div>
+
+        <div class="ImageBox">
+            <div class="row">
+                <div class="column"><img src="" alt="" class="Responsive"></div>
+                <div class="column"><img src="" alt="" class="Responsive"></div>
+            </div>
+        </div>
+
+        <div class="MainContent">
+            <p>
+                
+            </p>
+
+            <p>
+
+            </p>
+        </div>
 
         <div class="NavBox">
             <nav>
