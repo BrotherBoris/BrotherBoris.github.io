@@ -75,8 +75,50 @@
             </p>
 
             <p>
-
+                Nos vamos usar apenas a função Update para fazer o cubo se movimentar nos eixos x e z usando uma função da class Transform chamada "Translate". A forma 
+                como o Transform movimenta um objeto no espaço é pegando o valor atual e somando ou substituindo por outro valor, oque o método Translate faz é deixar mais 
+                fácil essa ação.
+                <br>Para utilizar esse método, nos precisamos saber qual o Transform que vai ser utilizado, nesse caso, vai ser o Transform do objeto que esse script esta 
+                ligado, para mencionar ele , nos usamos a variável local "transforme"(com T minúsculo),  depois nos colocamos um ponto e a função "Translate()". Para a 
+                função funcionar, nos precisamos dizer qual a direção em que ele vai se mover e para poder dizer qual a direção nos usamos a classe Unity gerencia três 
+                valores(x, y, z), a classe Vector3 e acessando sua função que da uma direção: Vector3.foward, Vector3.right, Vector3.up, etc...
+                <br>Além da direção nos precisamos saber qual a velocidade, nos podemos apenas multiplicar um valor a metodoVector3, mas lembre que isso será dentro do
+                função Update, como isso acontecera milhares de vezes por segundo, no precisamos normaliza-la de uma forma, e amaneira de fazer isso é multiplica-la pela 
+                função “Time.deltaTime”, uma função que gera um numero de acordo com a velocidade da sua maquina.
             </p>
+
+            <p>
+                Ate agora você dever ter algo assim: "transform.Translate(Vector3.forward * 5 * Time.deltaTime);"
+            </p>
+
+            <p>
+                Essa implementação do código esta correta, mas tem um erro crucial, ele vai mover o cubo em uma direção fixa para sempre, para corrigir esse erro, nos podemos introduzir
+                uma variável que vai receber um valor toda vez que nos apertarmos uma tecla, e se nos não apertarmos uma tecla, esse valor vai ficar em zero, assim movendo o cubo ou o 
+                deixando parado quando quisermos. Para a nossa felicidade a Unity tem uma implementação que recebe o input do teclado e gera um valor de 1 a -1 quando as teclas "W" e 
+                "S" ou "A" e "D" são pressionadas, essa função sendo:
+            </p>
+
+            <p>
+                "Input.GetAxis("Horizontal");" que gera o valor 1 quando "A" é pressionado, -1 quando "D" é pressionado e 0 quando inativo.
+
+                <br>"Input.GetAxis("Vertical");" que gera o valor 1 quando "W" é pressionado, -1 quando "S" é pressionado e 0 quando inativo.
+
+                <br>Para receber esses valores, vamos criar 2 variáveis do tipo float chamadas inputH e inputV, formatando o código dessa maneira:
+            </p>
+
+            <!--
+                public float inputH, inputV;
+
+                void Update()
+                {
+                    inputH = Input.GetAxis("Horizontal");
+                    inputV = Input.GetAxis("Vertical");   
+                        
+                    transform.Translate(Vector3.forward * Time.deltaTime * 5 * inputV);
+                    transform.Translate(Vector3.right * Time.deltaTime * 5 * inputH);
+                }
+            -->
+
         </div>
 
         <div class="NavBox">
