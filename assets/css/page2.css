@@ -40,13 +40,13 @@ body
   margin-bottom: 1%;
   /*Border*/
   box-sizing: border-box;
-  border: 1px solid #7f7f7f;
+  border: 1px solid #000000;
 }
 
 .CodeBox
 {
   background: #1d1c1cea;
-  color: rgb(23, 207, 115);
+  color: #ffffff;
   width: 80%;
   padding-left: 1%;
   padding-top: 1%;
@@ -59,6 +59,10 @@ body
   box-sizing: border-box;
   border: 1px solid #000000;
 }
+
+
+.CFCB{color: rgb(125, 203, 206);}.CFCG{color: rgb(102, 250, 102);}.CFCY{color: rgb(238, 196, 132);}.CFCP{color: rgb(178, 77, 182);}
+
 
 .Responsive
 {

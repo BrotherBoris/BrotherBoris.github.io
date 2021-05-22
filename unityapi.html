@@ -64,32 +64,37 @@
 
         <div class="MainContent">
             <p>
-                Agora com o ambiente de programação aberto nos podemos notar duas coisas importantes, três linhas de códigos que estão importado "NameSpaces" e duas funções que foram
-                automaticamente criadas junto com o arquivo, esses NameSpaces no começo são obrigatórios para usar as funções da Unity e as funções "Start" e "Update" são  muito 
-                importante que você provavelmente vai usar na maioria dos Scripts
-                <br>A Função "Start" executa todo o código dentro das chaves uma vez que o jogo começa e apenas quando ele começa, para executar um código quando um objeto é criado 
-                depois da inicialização do jogo, nos pode usar a função "Awake", que é um tipo de variação da função Start que executa o código quando é criado. A função "Update" 
-                executa todo o código dentro das chaves uma vez a cada frame, isso é executando um código milhares de vezes por segundo, isso pode pesar o jogo quando colocamos um 
-                algoritmo mais complicado ou que usa a física do jogo, nessas instancias nos usamos a função "Fixed Update", que é uma variação do próprio Update, sendo executada 
-                em um frequência fixa, de acordo com a maquina.
+                Agora com o ambiente de programação aberto nos podemos notar duas coisas importantes, três linhas de códigos que estão importado "<strong>NameSpaces</strong>" e 
+                duas funções que foram automaticamente criadas junto com o arquivo, esses NameSpaces no começo são obrigatórios para usar as funções da Unity e as funções 
+                "<strong>Start</strong>" e "<strong>Update</strong>" são  muito importante que você provavelmente vai usar na maioria dos Scripts
+                <br>A Função "<strong>Start</strong>" executa todo o código dentro das chaves uma vez que o jogo começa e apenas quando ele começa, para executar um código quando
+                um objeto é criado depois da inicialização do jogo, nos pode usar a função "<strong>Awake</strong>", que é um tipo de variação da função Start que executa o código
+                quando é criado. A função "<strong>Update</strong>" executa todo o código dentro das chaves uma vez a cada frame, isso é executando um código milhares de vezes por
+                segundo, isso pode pesar o jogo quando colocamos um algoritmo mais complicado ou que usa a física do jogo, nessas instancias nos usamos a função 
+                "<strong>Fixed Update</strong>", que é uma variação do próprio Update, sendo executada em um frequência fixa, de acordo com a maquina.
             </p>
 
             <p>
-                Nos vamos usar apenas a função Update para fazer o cubo se movimentar nos eixos x e z usando uma função da class Transform chamada "Translate". A forma 
-                como o Transform movimenta um objeto no espaço é pegando o valor atual e somando ou substituindo por outro valor, oque o método Translate faz é deixar mais 
-                fácil essa ação.
+                Nos vamos usar apenas a função Update para fazer o cubo se movimentar nos eixos x e z usando uma função da class Transform chamada 
+                "<strong>Translate</strong>". A forma como o Transform movimenta um objeto no espaço é pegando o valor atual e somando ou substituindo por outro valor, oque o 
+                método Translate faz é deixar mais fácil essa ação.
                 <br>Para utilizar esse método, nos precisamos saber qual o Transform que vai ser utilizado, nesse caso, vai ser o Transform do objeto que esse script esta 
-                ligado, para mencionar ele , nos usamos a variável local "transforme"(com T minúsculo),  depois nos colocamos um ponto e a função "Translate()". Para a 
-                função funcionar, nos precisamos dizer qual a direção em que ele vai se mover e para poder dizer qual a direção nos usamos a classe Unity gerencia três 
-                valores(x, y, z), a classe Vector3 e acessando sua função que da uma direção: Vector3.foward, Vector3.right, Vector3.up, etc...
-                <br>Além da direção nos precisamos saber qual a velocidade, nos podemos apenas multiplicar um valor a metodoVector3, mas lembre que isso será dentro do
-                função Update, como isso acontecera milhares de vezes por segundo, no precisamos normaliza-la de uma forma, e amaneira de fazer isso é multiplica-la pela 
+                ligado, para mencionar ele , nos usamos a variável local "<strong>transforme</strong>"(com T minúsculo),  depois nos colocamos um ponto e a função 
+                "<strong>Translate()</strong>". Para a função funcionar, nos precisamos dizer qual a direção em que ele vai se mover e para poder dizer qual a direção nos 
+                usamos a classe Unity gerencia três valores(x, y, z), a classe <strong>Vector3</strong> e acessando sua função que da uma direção: <strong>Vector3.foward</strong>,
+                <strong>Vector3.right</strong>, <strong>Vector3.up</strong>, etc...
+                <br>Além da direção nos precisamos saber qual a velocidade, nos podemos apenas multiplicar um valor a metodo Vector3, mas lembre que isso será dentro da
+                função Update, como isso acontecera milhares de vezes por segundo, no precisamos normaliza-la de uma forma, e a maneira de fazer isso é multiplica-la pela 
                 função “Time.deltaTime”, uma função que gera um numero de acordo com a velocidade da sua maquina.
             </p>
 
             <p>
-                Ate agora você dever ter algo assim: "transform.Translate(Vector3.forward * 5 * Time.deltaTime);"
+                Ate agora você dever ter algo assim:
             </p>
+            
+<div class="CodeBox"><pre>
+transform.<span class="CFCG">Translate</span>(Vector3.forward * 5 * Time.deltaTime);
+</pre></div>
 
             <p>
                 Essa implementação do código esta correta, mas tem um erro crucial, ele vai mover o cubo em uma direção fixa para sempre, para corrigir esse erro, nos podemos introduzir
@@ -99,24 +104,26 @@
             </p>
 
             <p>
-                "Input.GetAxis("Horizontal");" que gera o valor 1 quando "A" é pressionado, -1 quando "D" é pressionado e 0 quando inativo.
+                "<strong>Input.GetAxis("Horizontal");</strong>" que gera o valor 1 quando "A" é pressionado, -1 quando "D" é pressionado e 0 quando inativo.
 
-                <br>"Input.GetAxis("Vertical");" que gera o valor 1 quando "W" é pressionado, -1 quando "S" é pressionado e 0 quando inativo.
+                <br>"I<strong>nput.GetAxis("Vertical");</strong>" que gera o valor 1 quando "W" é pressionado, -1 quando "S" é pressionado e 0 quando inativo.
+            </p>
 
-                <br>Para receber esses valores, vamos criar 2 variáveis do tipo float chamadas inputH e inputV, formatando o código dessa maneira:
+            <p>
+                Para receber esses valores, vamos criar 2 variáveis do tipo float chamadas "inputH" e "inputV", formatando o código dessa maneira:
             </p>
 
             <div class="CodeBox">
                 <pre>
-public float inputH, inputV;
+<span class="CFCP">public</span> <span class="CFCB">float</span> inputH, inputV;
 
-void Update()
+<span class="CFCB">void</span> <span class="CFCG">Update</span>()
 {
-    inputH = Input.GetAxis("Horizontal");
-    inputV = Input.GetAxis("Vertical");
+    inputH = Input.<span class="CFCG">GetAxis</span>(<span class="CFCY">"Horizontal"</span>);
+    inputV = Input.<span class="CFCG">GetAxis</span>(<span class="CFCY">"Vertical"</span>);
 
-    transform.Translate(Vector3.forward * Time.deltaTime * 5 * inputV);
-    transform.Translate(Vector3.right * Time.deltaTime * 5 * inputH);
+    transform.<span class="CFCG">Translate</span>(Vector3.forward * Time.deltaTime * 5 * inputV);
+    transform.<span class="CFCG">Translate</span>(Vector3.right * Time.deltaTime * 5 * inputH);
 }
                 </pre>
             </div>
