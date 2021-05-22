@@ -106,18 +106,20 @@
                 <br>Para receber esses valores, vamos criar 2 variáveis do tipo float chamadas inputH e inputV, formatando o código dessa maneira:
             </p>
 
-            <!--
-                public float inputH, inputV;
+            <div class="CodeBox">
+                <pre>
+public float inputH, inputV;
 
-                void Update()
-                {
-                    inputH = Input.GetAxis("Horizontal");
-                    inputV = Input.GetAxis("Vertical");   
-                        
-                    transform.Translate(Vector3.forward * Time.deltaTime * 5 * inputV);
-                    transform.Translate(Vector3.right * Time.deltaTime * 5 * inputH);
-                }
-            -->
+void Update()
+{
+    inputH = Input.GetAxis("Horizontal");
+    inputV = Input.GetAxis("Vertical");
+
+    transform.Translate(Vector3.forward * Time.deltaTime * 5 * inputV);
+    transform.Translate(Vector3.right * Time.deltaTime * 5 * inputH);
+}
+                </pre>
+            </div>
 
         </div>
 
