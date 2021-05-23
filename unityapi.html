@@ -54,12 +54,9 @@
             </p>
             
         </div>
-        
+
         <div class="ImageBox">
-            <div class="row">
-                <div class="column"><img src="assets/img/CubeWithScript(B).PNG" alt="Cube with a script" class="Responsive"></div>
-                <div class="column"><img src="assets/img/DevelopmentEnviorement(B).PNG" alt="C# Project" class="Responsive"></div>
-            </div>     
+            <img src="assets/img/DevelopmentEnviorement(B).PNG" alt="C# Project" class="Responsive">
         </div>
 
         <div class="MainContent">
@@ -113,6 +110,8 @@ transform.<span class="CFCG">Translate</span>(Vector3.forward * 5 * Time.deltaTi
                 Para receber esses valores, vamos criar 2 variáveis do tipo float chamadas "inputH" e "inputV", formatando o código dessa maneira:
             </p>
 
+<!--////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////-->
+
             <div class="CodeBox">
                 <pre>
 <span class="CFCP">public</span> <span class="CFCB">float</span> inputH, inputV;
@@ -128,7 +127,126 @@ transform.<span class="CFCG">Translate</span>(Vector3.forward * 5 * Time.deltaTi
                 </pre>
             </div>
 
+<!--////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////-->            
+
+            <p>
+                Se você for ao editor, esperar o código compilar e apertar o botão de Play, ou usar o atalho [<strong>Control + P</strong>], ira conseguir mover o cubo nos 
+                eixos X e Z. Agora que nos sabemos como usar o Transforme para mover objetos, vamos nos aprofundar um pouco mais nas outras funções básicas da Unity e 
+                descobrir como mover um objeto com gravidade e colisão que consiga interagir com outros objetos.
+            </p>
+
+            <p>
+                Va na tela Scene e coloque dois componentes no cubo player: "<strong>RigidBody</strong>" e "<strong>BoxCollider</strong>", nos iremos usar o BoxCollider, 
+                pois é mais apropriado para um objeto simples como o cubo, se fosse um modelo mais complexo nos poderíamos usar um "<strong>MeshCollider</strong>", que iria 
+                criar uma face de colisão para cada face do modelo, imitando vértice por vértice.
+                <br>Para simular a gravidade e colisões de objetos nos usamos em conjunção o componente RigidBody e os componentes do tipo "<strong>Collider</strong>", sem 
+                falar das dependências um do outro, um objeto com apenas um RigidBody vai atravessar o mundo, pois não tem colisão, e um objeto apenas com algum Collider não
+                vai conseguir usar todas as funções de classe, pois vai ser considerado um objeto estático.
+            </p>
+
+            <p>
+                Se você apertar em play, vai perceber que o cubo começa a cair infinitamente, isso é obviamente porque não ha um chão debaixo dele, crie outro cubo 3D mas 
+                dessa vez o expanda para ficar do tamanho de uma avenida, coloque ele debaixo do Player e adicione um <strong>MeshCollider</strong> se um 
+                <strong>BoxCollider</strong> não for adicionado automaticamente.
+                <br>Para modificar o tamanho de um objeto você ira precisar usar o campo ou função "<strong>Scale</strong>" no componente Transform, para editar o tamanho
+                sem precisar usar código, vá ao Inspetor e coloque os valores "10" e "40" nos campos "X" e "Z" do Scale no componente Transform.
+                <br>Você pode arrastar a câmera para o objeto Player na janela Hierarchy para torna-la um filho do Player, e faze-la segui-lo automaticamente e adicionar 
+                uma material ao player para o diferenciar da plataforma.
+            </p>
         </div>
+
+        <div class="ImageBox">
+            <img src="assets/img/CubeinHighway(B).PNG" alt="Cube in the Highway" class="Responsive">
+        </div>
+
+        <div class="MainContent">
+            <p>
+                Agora com uma plataforma para cubo andar em cima, nos podemos ver como ele interage com o chão e como ele cai das beiradas, mas nos ainda usamos o transform
+                para movimentar o player, agora nos vamos trocar o método de movimento por um que use a física da unity e adicionar outros objetos, que quando nos tocarmos,
+                eles serão destruídos assim:
+            </p>
+            
+            <p>
+                Assim como no método do Transform, nos precisamos referenciar qual o componente que será usado para realizar a ação do movimento, neste caso como o RigidBody 
+                não é um componente padrão de todo os objetos, nos precisamos encontrar e guardar a referencia do componente em uma variável especifica. Existem duas maneiras 
+                para referenciar um objeto ou componente dentro de uma variável na unity, nos podemos criar uma variável publica no Scrip e arrastar o objeto da Scene ou o 
+                componente dentro inspetor para o espaço alocado no Script dentro do inspetor, ou a segunda maneira, que é o método mais eficiente que é usando para referenciar
+                em tempo real quando o jogo esta rodando, o método "<strong>GetComponent&#60&#62()</strong>" o qual nos iremos usar.
+            </p>
+            
+            <p>
+                A forma como método funciona é bem simples de entender, primeiramente nos precisamos de uma variável que vai receber o resultado, depois o sinal de igual, 
+                depois a referencia do objeto que nos vamos procurar o componente, nesse caso vamos usar a variável "<strong>this</strong>", que referencia o propor objeto,
+                depois o método "<strong>GetComponent&#60TipoDeComponente&#62</strong>()", onde nos vamos colocar o tipo do componente dentro dos sinais de maior e menor,
+                nos podemos ate referenciar Scripts dessa maneira, pois eles são tratados como componentes.
+                <br>Vamos criar uma variável publica do tipo Rigidbody com o nome rb, abreviando para ficar mais simples, e colocar o método dentro de um Awake.
+                <br>O código deve ficar mais ou menos assim:
+            </p>
+
+<!--////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////-->
+            
+            <div class="CodeBox">
+                <pre>
+<span class="CFCP">public</span> <span class="CFCB">Rigidbody</span> rb;
+
+<span class="CFCP">private</span> <span class="CFCB">void</span> <span class="CFCG">Awake</span>() {
+    rb = <span class="CFCP">this</span>.<span class="CFCG">GetComponent</span>&#60<span class="CFCB">Rigidbody</span>&#62();
+}                
+                </pre>
+            </div>
+
+<!--////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////-->
+
+            <p>
+                Agora para fazer ele se movimentar nos vamos utilizar uma forma diferente para saber quando o usuário vai digitar uma tecla, invés de receber um valor, nos
+                vamos usar um If junto com um método chamado "<strong>Input.GetKey()</strong>". O método geralmente é usado em condições If else para saber se uma tecla 
+                especifica foi pressionada, para usar o método nos colocamos a classe "<strong>Input</strong>", depois o método que queremos usar, nesse caso o método 
+                "<strong>GetKey()</strong>" e dentro dos parênteses nos acessamos o "<strong>enum</strong>" de teclas "<strong>Keycode</strong>" e selecionamos a tecla 
+                desejada ou uma variável do tipo "<strong>Keycode</strong>", assim possibilizando criar nossas próprias variáveis para colocar em um menu onde o player pode
+                escolher oque cada tecla faz.
+                <br>Dentro de um FixedUpdate coloque um If com a condição "<strong>Input.GetKey(KeyCode.W)</strong>"
+            </p>
+
+            <p>
+                Agora nos vamos fazer o Player se movimentar usando um método que aplicando força em uma ou mais direções, o "<strong>addForce();</strong>" da classe 
+                RigidBody, para usar esse método basta apenas colocar qual componente será usado, a nome do método e em parênteses a força que será aplicada, mas vale 
+                lembrar que esse método tem varias sobrecargas, mas a que nos iremos usar é a que aplica força no eixo x, y e z. Valendo lembrar que colocando um valor 
+                negativo em um eixo vai o empurrar para trás.
+            </p>
+
+            <p>
+                A forma como iremos usar é mais ou menos assim:
+            </p>
+
+<!--////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////-->            
+
+            <div class="CodeBox">
+                <pre>
+<span class="CFCP">private</span> <span class="CFCB">void</span> <span class="CFCG">FixedUpdate</span>() 
+{   
+    <span class="CFCP">if</span> (Input.<span class="CFCG">GetKey</span>(KeyCode.W)){
+        rb.<span class="CFCG">AddForce</span>(0 ,0 ,1000 * Time.deltaTime);
+    } 
+    <span class="CFCP">else if</span> (Input.<span class="CFCG">GetKey</span>(KeyCode.S)){
+        rb.<span class="CFCG">AddForce</span>(0 ,0 , -1000 * Time.deltaTime);
+    }
+}
+                </pre>
+            </div>
+
+<!--////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////-->            
+
+        <p>
+            Seguindo essa linha de raciocínio nos podemos adicionar também outro If Else para mover para a esquerda e direita.
+        </p>
+
+
+
+
+        </div>
+
+
+
 
         <div class="NavBox">
             <nav>
