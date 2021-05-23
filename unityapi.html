@@ -240,13 +240,47 @@ transform.<span class="CFCG">Translate</span>(Vector3.forward * 5 * Time.deltaTi
             Seguindo essa linha de raciocínio nos podemos adicionar também outro If Else para mover para a esquerda e direita.
         </p>
 
+        <p>
+            Agora nos podemos prosseguir para a parte de colisões, crie outro cubo com uma colisão e física, de o nome de inimigo ou Enemy e use um material para dar outra
+            cor a ele, apos isso o coloque no meio ou final da plataforma.
+            <br>Agora nos vamos ver outra mecânica útil da Unit, ela se chama "<strong>Tag</strong>", Tags são como adesivos que você pode colocar em um objeto, com o limite
+            de apenas uma tag, é útil para fazer checagens rápidas usando código, vá ao inspetor e olhe na parte superior em baixo do nome do objeto, na parte do tag crie e 
+            adicione uma nova tag chamada "<strong>Enemy</strong>".
+        </p>
 
+        <p>
+            Para destruir o cubo inimigo nos vamos usar duas funções muito importantes, o "<strong>OnCollisionEnter()</strong>" que é um evento que executa o código toda vez
+            que o objeto entra em colisão com outro objeto que possui um componente de colisão, por padrão essa função vem com o parâmetro "<strong>Collision other</strong>"
+            que nos possibilita ter uma referia de com qual objeto foi colidido, e a função "<strong>Destroy()</strong>"" que como o nome indica, destrói o objeto que estiver
+            dentro dos parênteses. Vamos usar o evento do OnCollisionEnter mais um If com a condição sendo que, se a tag do objeto tocado for igual a "Enemy", ele será 
+            destruído e para montar esse código é bem simples:
+        </p>
 
-
+<!--////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////-->            
+        <div class="CodeBox">
+            <pre>
+<span class="CFCP">private</span> <span class="CFCB">void</span> <span class="CFCG">OnCollisionEnter</span>(<span class="CFCB">Collision</span> <span class="CFCY">other</span>) {
+    <span class="CFCP">if</span>(other.gameObject.<span class="CFCG">CompareTag</span class="">(<span class="CFCY">"Enemy"</span>)){
+        <span class="CFCG">Destroy</span>(other.gameObject);
+    }
+}
+            </pre>
         </div>
+<!--////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////////////////code////////////-->            
+        
+        <p>
+            Se você der Play você ira ver que toda vez que o player colide com o outro cubo ele é deletado, você pode invertendo o processo e invés do cubo inimigo ser 
+            deletado, o player seja destruído, entender a plataforma e adicionar mais cubos, e o player comece a andar automaticamente, fazendo um mini game onde o jogador 
+            deve desviar dos cubos na pista.
+            <br> Programar na Unity é muito fácil e pratico, oque você viu nesse blog não é nem a ponta do iceberg, eu recomento você olhar o manual e pesquisar 
+            frequentemente sobre a API, Unity Engine é uma ferramenta poderosa e eu recomendo para qualquer tipo de projeto.
+        </p>
 
+        <p>
+            Prossiga para a próxima e ultima pagina desse blog para aprender como usar a Asset Store, fazer a build de um projeto e como usar os mini games da Unity
+        </p>
 
-
+    </div>
 
         <div class="NavBox">
             <nav>
