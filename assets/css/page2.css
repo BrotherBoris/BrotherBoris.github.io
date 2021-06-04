@@ -1,17 +1,10 @@
 ul{list-style: square;}pre{ white-space: pre-wrap;word-wrap: break-word;text-align: justify;word-break: break-all;}
 
-body
-{
-  margin: 0;
-  background: #e2e2e2;
-  /*font stuff*/
-  line-height: 1.5;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .MainContent
 {
   background: #ffffff;
+  width: 100%;
+  /*padding*/
   padding-left: 1%;
   padding-right: 1%;
   padding-top: 1%;
@@ -31,6 +24,7 @@ body
 {
   background: #ffffff;
   width: auto;
+  /*padding*/
   padding-left: 1%;
   padding-top: 1%;
   /*Margin*/
@@ -48,6 +42,7 @@ body
   background: #1d1c1cea;
   color: #ffffff;
   width: 80%;
+  /*padding*/
   padding-left: 1%;
   padding-top: 1%;
   /*Margin*/
@@ -60,9 +55,9 @@ body
   border: 1px solid #000000;
 }
 
-
+/*ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////*/
 .CFCB{color: rgb(125, 203, 206);}.CFCG{color: rgb(102, 250, 102);}.CFCY{color: rgb(238, 196, 132);}.CFCP{color: rgb(178, 77, 182);}
-
+/*ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////*/
 
 .Responsive
 {

@@ -9,26 +9,32 @@ body
 {
   margin: 0;
   background: #e2e2e2;
+  /*font stuff*/
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    width: 85%;
+    margin: auto;
 }
 
 .cabeca
 {
   background: #b1b1b1;
   text-align: center;
-  padding: 25px;
+  padding: 1%;
   border-bottom: 10px solid #7f7f7f;
 }
 
 .GenericTitle
 {
   background: #ffffff;
-  /*Margin*/
+  /*padding*/
   padding-left: 1%;
   padding-top: 1%;
-  margin-left: 5%;
-  margin-right: 5%;
+  /*Margin*/
+  margin: auto;
   margin-top: 1%;
   /*Border*/
   border-radius: 10px;
@@ -37,49 +43,48 @@ body
   text-align: center;
 }
 
-.rodape
-{
-  background: #b1b1b1;
-  padding: 25px;
-  text-align: right;
-  border-top: 10px solid #7f7f7f;
-}
 
 .contentbox
 {
   background: #ffffff;
   width: 60%;
+  /*padding*/
   padding-left: 1%;
   padding-top: 1%;
   /*Margin*/
-  margin-left: 20%;
-  margin-right: 20%;
+  margin: auto;
   margin-top: 1%;
   margin-bottom: 1%;
   /*Border*/
-  width: 50%;
   border-radius: 10px;
   box-sizing: border-box;
   border-bottom: 5px solid #7f7f7f;
   border-right: 5px solid #7f7f7f;
 }
 
-
 .NavBox
 {
   text-align: center;
   background: #ffffff;
+  width: 60%;
+  /*padding*/
   padding: 1%;
   /*Margin*/
-  margin-left: 20%;
-  margin-right: 20%;
+  margin: auto;
   margin-top: 1%;
   margin-bottom: 1%;
   /*Border*/
-  width: 50%;
   border-radius: 10px;
   box-sizing: border-box;
   border-bottom: 5px solid #7f7f7f;
   border-right: 5px solid #7f7f7f;
 }
 .NavBox ul{list-style: none ;}
+
+.rodape
+{
+  background: #b1b1b1;
+  padding: 1%;
+  text-align: right;
+  border-top: 10px solid #7f7f7f;
+}
