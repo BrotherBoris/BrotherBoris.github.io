@@ -1,4 +1,4 @@
-ul{list-style: square;}pre{ white-space: pre-wrap;word-wrap: break-word;text-align: justify;word-break: break-all;}
+ul{list-style: square;}pre{ white-space: pre-wrap;word-wrap: break-word;text-align: justify;word-break: break-all;}img{width: 100%;}
 
 .MainContent
 {
@@ -11,7 +11,7 @@ ul{list-style: square;}pre{ white-space: pre-wrap;word-wrap: break-word;text-ali
   /*Margin*/
   margin-left: 1%;
   margin-right: 1%;
-  margin-top: 1%;
+  margin-top: 1%; 
   margin-bottom: 1%;
   /*Border*/
   width: 98%;
