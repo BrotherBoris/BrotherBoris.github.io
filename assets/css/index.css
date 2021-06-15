@@ -1,4 +1,4 @@
-h1{font-size: 25px;}h2{font-size: 21px;}h3{font-size: 25px;}p,a{font-size: 16px;}ul{list-style: square;}
+h1{font-size: 25px;}h2{font-size: 21px;}h3{font-size: 25px;}p,a{font-size: 21px;}ul{list-style: square;}img{width: 100%;}
 
 a{
   color: #356fec;
@@ -73,7 +73,7 @@ main {
 }
 
 .Navigational a:hover {
-    background-color: #181818;
+    background-color: #18181844;
     color: #ffffff;
   }
 
@@ -83,4 +83,12 @@ main {
   padding: 1%;
   text-align: right;
   border-top: 10px solid #7f7f7f;
+}
+
+.rodape p{
+  font-size: 20px;
+}
+
+.rodape img{
+  max-width: 32px;
 }
