@@ -20,6 +20,31 @@ ul{list-style: square;}pre{ white-space: pre-wrap;word-wrap: break-word;text-ali
 
 }
 
+.ImagesOnRight {
+    float: right;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+}
+.ImagesOnLeft {
+    float: left;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+}
+
+.SmallDivision{
+  margin: auto;
+  margin-top: 0%;
+  margin-bottom: 12%;
+}
+
+.BigDivision{
+  margin: auto;
+  
+  margin-bottom: 2%;
+}
+
 .ImageBox
 {
   background: #ffffff;
@@ -28,8 +53,7 @@ ul{list-style: square;}pre{ white-space: pre-wrap;word-wrap: break-word;text-ali
   padding-left: 1%;
   padding-top: 1%;
   /*Margin*/
-  margin-left: 20%;
-  margin-right: 20%;
+  margin: auto;
   margin-top: 1%;
   margin-bottom: 1%;
   /*Border*/
@@ -64,15 +88,4 @@ ul{list-style: square;}pre{ white-space: pre-wrap;word-wrap: break-word;text-ali
   width: 100%;
   max-width: 1000px;
   height: auto;
-}
-
-.column {
-  float: left;
-  width: 40%;
-  padding: 5px;
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
 }

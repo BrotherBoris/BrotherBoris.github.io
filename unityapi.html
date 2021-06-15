@@ -49,6 +49,7 @@
                     selecione o cubo, e na janela do Inspector, aperte o botão Add Component e digite o nome do script que você quer adicionar, nesse casso
                     "<em>PlayerController</em>".
                 </p>
+                
                 <p>
                     Agora estamos prontos para "colocar a mão na massa", para começar a programar, precisamos abrir o ambiente de desenvolvimento, aperte o botão direito na
                     janela do Project e selecione "Open C# Project".
@@ -61,21 +62,19 @@
                     <br>Nesse tutorial eu estarei usando o Visual Studio Code.
                 </p>
             
-            </div>
-            <div class="ImageBox">
-                <img src="assets/img/DevelopmentEnviorement(B).PNG" alt="C# Project" class="Responsive">
-            </div>
-            <div class="MainContent">
-                <p>
-                    Agora com o ambiente de programação aberto nos podemos notar duas coisas importantes, três linhas de códigos que estão importado "<strong>NameSpaces</strong>" e
-                    duas funções que foram automaticamente criadas junto com o arquivo, esses NameSpaces no começo são obrigatórios para usar as funções da Unity e as funções
-                    "<strong>Start</strong>" e "<strong>Update</strong>" são  muito importante que você provavelmente vai usar na maioria dos Scripts
-                    <br>A Função "<strong>Start</strong>" executa todo o código dentro das chaves uma vez que o jogo começa e apenas quando ele começa, para executar um código quando
-                    um objeto é criado depois da inicialização do jogo, nos pode usar a função "<strong>Awake</strong>", que é um tipo de variação da função Start que executa o código
-                    quando é criado. A função "<strong>Update</strong>" executa todo o código dentro das chaves uma vez a cada frame, isso é executando um código milhares de vezes por
-                    segundo, isso pode pesar o jogo quando colocamos um algoritmo mais complicado ou que usa a física do jogo, nessas instancias nos usamos a função
-                    "<strong>Fixed Update</strong>", que é uma variação do próprio Update, sendo executada em um frequência fixa, de acordo com a maquina.
-                </p>
+                <div class="SmallDivision">
+                    <p>
+                        <img src="assets/img/DevelopmentEnviorement(B).PNG" alt="C# Project" class="ImagesOnRight">
+                        Agora com o ambiente de programação aberto nos podemos notar duas coisas importantes, três linhas de códigos que estão importado "<strong>NameSpaces</strong>" e
+                        duas funções que foram automaticamente criadas junto com o arquivo, esses NameSpaces no começo são obrigatórios para usar as funções da Unity e as funções
+                        "<strong>Start</strong>" e "<strong>Update</strong>" são  muito importante que você provavelmente vai usar na maioria dos Scripts
+                        <br>A Função "<strong>Start</strong>" executa todo o código dentro das chaves uma vez que o jogo começa e apenas quando ele começa, para executar um código quando
+                        um objeto é criado depois da inicialização do jogo, nos pode usar a função "<strong>Awake</strong>", que é um tipo de variação da função Start que executa o código
+                        quando é criado. A função "<strong>Update</strong>" executa todo o código dentro das chaves uma vez a cada frame, isso é executando um código milhares de vezes por
+                        segundo, isso pode pesar o jogo quando colocamos um algoritmo mais complicado ou que usa a física do jogo, nessas instancias nos usamos a função
+                        "<strong>Fixed Update</strong>", que é uma variação do próprio Update, sendo executada em um frequência fixa, de acordo com a maquina.
+                    </p>
+                </div>
                 <p>
                     Nos vamos usar apenas a função Update para fazer o cubo se movimentar nos eixos x e z usando uma função da class Transform chamada
                     "<strong>Translate</strong>". A forma como o Transform movimenta um objeto no espaço é pegando o valor atual e somando ou substituindo por outro valor, oque o
@@ -142,33 +141,32 @@ transform.<span class="CFCG">Translate</span>(Vector3.forward * 5 * Time.deltaTi
                     falar das dependências um do outro, um objeto com apenas um RigidBody vai atravessar o mundo, pois não tem colisão, e um objeto apenas com algum Collider não
                     vai conseguir usar todas as funções de classe, pois vai ser considerado um objeto estático.
                 </p>
-                <p>
-                    Se você apertar em play, vai perceber que o cubo começa a cair infinitamente, isso é obviamente porque não ha um chão debaixo dele, crie outro cubo 3D mas
-                    dessa vez o expanda para ficar do tamanho de uma avenida, coloque ele debaixo do Player e adicione um <strong>MeshCollider</strong> se um
-                    <strong>BoxCollider</strong> não for adicionado automaticamente.
-                    <br>Para modificar o tamanho de um objeto você ira precisar usar o campo ou função "<strong>Scale</strong>" no componente Transform, para editar o tamanho
-                    sem precisar usar código, vá ao Inspetor e coloque os valores "10" e "40" nos campos "X" e "Z" do Scale no componente Transform.
-                    <br>Você pode arrastar a câmera para o objeto Player na janela Hierarchy para torna-la um filho do Player, e faze-la segui-lo automaticamente e adicionar
-                    uma material ao player para o diferenciar da plataforma.
-                </p>
-            </div>
-            <div class="ImageBox">
-                <img src="assets/img/CubeinHighway(B).PNG" alt="Cube in the Highway" class="Responsive">
-            </div>
-            <div class="MainContent">
-                <p>
-                    Agora com uma plataforma para cubo andar em cima, nos podemos ver como ele interage com o chão e como ele cai das beiradas, mas nos ainda usamos o transform
-                    para movimentar o player, agora nos vamos trocar o método de movimento por um que use a física da unity e adicionar outros objetos, que quando nos tocarmos,
-                    eles serão destruídos assim:
-                </p>
+                
+                <div class="BigDivision">
+                    <p>
+                        <img src="assets/img/CubeinHighway(B).PNG" alt="Cube in the Highway" class="ImagesOnRight">
+                        Se você apertar em play, vai perceber que o cubo começa a cair infinitamente, isso é obviamente porque não ha um chão debaixo dele, crie outro cubo 3D mas
+                        dessa vez o expanda para ficar do tamanho de uma avenida, coloque ele debaixo do Player e adicione um <strong>MeshCollider</strong> se um
+                        <strong>BoxCollider</strong> não for adicionado automaticamente.
+                        <br>Para modificar o tamanho de um objeto você ira precisar usar o campo ou função "<strong>Scale</strong>" no componente Transform, para editar o tamanho
+                        sem precisar usar código, vá ao Inspetor e coloque os valores "10" e "40" nos campos "X" e "Z" do Scale no componente Transform.
+                        <br>Você pode arrastar a câmera para o objeto Player na janela Hierarchy para torna-la um filho do Player, e faze-la segui-lo automaticamente e adicionar
+                        uma material ao player para o diferenciar da plataforma.
+                    </p>
+                    <p>
+                        Agora com uma plataforma para cubo andar em cima, nos podemos ver como ele interage com o chão e como ele cai das beiradas, mas nos ainda usamos o transform
+                        para movimentar o player, agora nos vamos trocar o método de movimento por um que use a física da unity e adicionar outros objetos, que quando nos tocarmos,
+                        eles serão destruídos assim:
+                    </p>
+                    <p>
+                        Assim como no método do Transform, nos precisamos referenciar qual o componente que será usado para realizar a ação do movimento, neste caso como o RigidBody
+                        não é um componente padrão de todo os objetos, nos precisamos encontrar e guardar a referencia do componente em uma variável especifica. Existem duas maneiras
+                        para referenciar um objeto ou componente dentro de uma variável na unity, nos podemos criar uma variável publica no Scrip e arrastar o objeto da Scene ou o
+                        componente dentro inspetor para o espaço alocado no Script dentro do inspetor, ou a segunda maneira, que é o método mais eficiente que é usando para referenciar
+                        em tempo real quando o jogo esta rodando, o método "<strong>GetComponent&#60&#62()</strong>" o qual nos iremos usar.
+                    </p>
+                </div>
             
-                <p>
-                    Assim como no método do Transform, nos precisamos referenciar qual o componente que será usado para realizar a ação do movimento, neste caso como o RigidBody
-                    não é um componente padrão de todo os objetos, nos precisamos encontrar e guardar a referencia do componente em uma variável especifica. Existem duas maneiras
-                    para referenciar um objeto ou componente dentro de uma variável na unity, nos podemos criar uma variável publica no Scrip e arrastar o objeto da Scene ou o
-                    componente dentro inspetor para o espaço alocado no Script dentro do inspetor, ou a segunda maneira, que é o método mais eficiente que é usando para referenciar
-                    em tempo real quando o jogo esta rodando, o método "<strong>GetComponent&#60&#62()</strong>" o qual nos iremos usar.
-                </p>
             
                 <p>
                     A forma como método funciona é bem simples de entender, primeiramente nos precisamos de uma variável que vai receber o resultado, depois o sinal de igual,
