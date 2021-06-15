@@ -43,7 +43,6 @@ main {
   text-align: center;
 }
 
-
 .contentbox
 {
   background: #ffffff;
@@ -62,24 +61,21 @@ main {
   border-right: 5px solid #7f7f7f;
 }
 
-.NavBox
-{
+.Navigational{
   text-align: center;
-  background: #ffffff;
-  width: 60%;
-  /*padding*/
-  padding: 1%;
-  /*Margin*/
-  margin: auto;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  /*Border*/
-  border-radius: 10px;
-  box-sizing: border-box;
-  border-bottom: 5px solid #7f7f7f;
-  border-right: 5px solid #7f7f7f;
 }
-.NavBox ul{list-style: none ;}
+
+.Navigational a{
+  color: #000000;
+  font-size: 20px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.Navigational a:hover {
+    background-color: #181818;
+    color: #ffffff;
+  }
 
 .rodape
 {

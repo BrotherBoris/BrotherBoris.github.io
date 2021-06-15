@@ -41,25 +41,9 @@ ul{list-style: square;}pre{ white-space: pre-wrap;word-wrap: break-word;text-ali
 
 .BigDivision{
   margin: auto;
-  
   margin-bottom: 2%;
 }
 
-.ImageBox
-{
-  background: #ffffff;
-  width: auto;
-  /*padding*/
-  padding-left: 1%;
-  padding-top: 1%;
-  /*Margin*/
-  margin: auto;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  /*Border*/
-  box-sizing: border-box;
-  border: 1px solid #000000;
-}
 
 .CodeBox
 {
@@ -82,10 +66,3 @@ ul{list-style: square;}pre{ white-space: pre-wrap;word-wrap: break-word;text-ali
 /*ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////*/
 .CFCB{color: rgb(125, 203, 206);}.CFCG{color: rgb(102, 250, 102);}.CFCY{color: rgb(238, 196, 132);}.CFCP{color: rgb(178, 77, 182);}
 /*ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////ColorFont classes//////////////*/
-
-.Responsive
-{
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-}
