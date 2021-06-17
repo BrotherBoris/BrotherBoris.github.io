@@ -63,11 +63,14 @@ main {
 
 .Navigational{
   text-align: center;
+  width: 100%;
+  line-height: 1.5;
+  margin: auto;
 }
 
 .Navigational a{
   color: #000000;
-  font-size: 20px;
+  font-size: 21px;
   padding-left: 1%;
   padding-right: 1%;
 }
