@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/rpg.css">
+    <title>Rpg</title>
+</head>
+<body>
+    <header class="Header">
+        <h1 id="Title">RPGName</h1>
+        <nav>
+            <a href="index.html">Pagina Principal</a>
+        </nav>
+    </header>
+    <main>
+        <!-- SetStatsBox -->
+        <div class="MainStatsBox">
+            <h1>Seus Stats</h1>
+            <p>Preencha os seus stats</p>
+            <div class="InnerStatsBox">
+                <p style="text-align: center;" id="PointsAlert">Pontos disponiveis = 10</p>
+                <div>
+                    <button name="DeleteButton">-</button>
+                    <p style="display: inline-block">-Força: <span id="str">1</span></p>
+                    <button name="DeleteButton" onclick="increaseStat()">+</button>
+                </div>
+                <div><p id="spd">-Velocidade: <span>1</span></p></div>
+                <div><p id="def">-Defesa: <span>1</span></p></div>
+                <div><p id="lck">-Sorte(WIP): <span>1</span></p></div>
+            </div>
+        </div>
+        <!-- SetStatsBox -->
+
+
+        <div class="AmostraBox">
+            <p>a</p>
+            <p class="Amostra4">4</p>
+            <p>a</p>
+        </div>
+    </main>
+    <footer class="Footer">
+        
+    </footer>
+    <script src="/assets/js/game.js"></script>
+</body>
+</html>

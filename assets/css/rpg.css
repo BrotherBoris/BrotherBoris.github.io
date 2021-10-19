@@ -1,0 +1,75 @@
+h1{font-size: 25px;}h2{font-size: 21px;}h3{font-size: 25px;}p,a{font-size: 18px;}ul{list-style: square;}img{width: 100%;}
+a{color: white;}
+
+body{
+  margin: 0;
+  background: #003367;
+  /*font stuff*/
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.Header{
+  text-align: center;
+  padding: 1%;
+  margin-bottom: 5%;
+  background: #2f3133;
+  border-bottom: solid 10px #1e2529;
+  
+}
+
+.Footer{
+  
+}
+
+.MainStatsBox{
+  background: #00224e;
+  width:40%;
+  text-align: center;
+  /*padding*/
+  padding: 1%;
+  /*Margin*/
+  margin-left: 1%;
+  /*Border*/
+  border-radius: 10px;
+}
+
+.InnerStatsBox{
+  background: #001a38;
+  width:100%;
+  /*Text*/
+  text-align: left;
+  line-height: 2.5;
+  /*Border*/
+  border-radius: 10px;
+}
+
+.InnerStatsBox p{
+  font-size: 16px;
+}
+
+.StatsFloater{
+  position: absolute;
+
+}
+
+
+
+.AmostraBox{
+  text-align: center;
+  width: 40%;
+  background: rgb(0, 0, 0);
+}
+
+.Amostra4{ 
+  background-image: linear-gradient(to right , #001a38 16%, #00224e 16%, #00224e 32%, #003367 32%, #003367 48%, #171d20 48%, #171d20 64%, #1e2529 64%, #1e2529 80%, #2f3133 80%, #2f3133 100%); 
+}
+
+/* 5 colors non-mix:
+(First 20%, Second 20%, Second 40%, Third 40%, Third 60%, Fourth 60%, Fourth 80%, Fifth 80%, Fifth 100%)*/
+/* 6 colors non-mix:
+(First 16%, Second 16%, Second 32%, Third 32%, Third 48%, Fourth 48%, Fourth 64%, Fifth 64%, Fifth 80, sixth 80, sixth 100) */
+/* Amostra 1 = #23395d, #203354, #1c2e4a , #192841, #152238  */
+/* Amostra 2 = #404552, #383c4a, #4b5162, #2594e2, #7c818c */
+/* Amostra 4 = #001a38, #00224e, #003367, #171d20, #1e2529, #2f3133 */
