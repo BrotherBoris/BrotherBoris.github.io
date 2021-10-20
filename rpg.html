@@ -20,15 +20,27 @@
             <h1>Seus Stats</h1>
             <p>Preencha os seus stats</p>
             <div class="InnerStatsBox">
-                <p style="text-align: center;" id="PointsAlert">Pontos disponiveis = 10</p>
+                <p style="text-align: center;" id="PointsAlert">Pontos disponiveis = <span id="pts">10</span></p>
                 <div>
-                    <button name="DeleteButton">-</button>
+                    <button name="DeleteButton" onclick="decreaseStr()">-</button>
                     <p style="display: inline-block">-Força: <span id="str">1</span></p>
-                    <button name="DeleteButton" onclick="increaseStat()">+</button>
+                    <button name="DeleteButton" onclick="increaseStr()">+</button>
                 </div>
-                <div><p id="spd">-Velocidade: <span>1</span></p></div>
-                <div><p id="def">-Defesa: <span>1</span></p></div>
-                <div><p id="lck">-Sorte(WIP): <span>1</span></p></div>
+                <div>
+                    <button name="DeleteButton" onclick="decreaseSpd()">-</button>
+                    <p style="display: inline-block">-Velocidade: <span  id="spd">1</span></p>
+                    <button name="DeleteButton" onclick="increaseSpd()">+</button>
+                </div>
+                <div>
+                    <button name="DeleteButton" onclick="decreaseDef()">-</button>    
+                    <p style="display: inline-block">-Defesa: <span  id="def">1</span></p>
+                    <button name="DeleteButton" onclick="increaseDef()">+</button>
+                </div>
+                <div>
+                    <button name="DeleteButton" onclick="decreaseLck()">-</button>                    
+                    <p style="display: inline-block">-Sorte: <span  id="lck">1</span></p>
+                    <button name="DeleteButton" onclick="increaseLck()">+</button>                
+                </div>
             </div>
         </div>
         <!-- SetStatsBox -->
