@@ -41,7 +41,6 @@ function decreaseStr() {
         statsPoints += 1;
         updateStatsText();
     }
-    console.log(statsPoints ,strenght, speed, defense, luck)
 }
 function decreaseSpd() {
         if (speed > 1){
@@ -49,7 +48,6 @@ function decreaseSpd() {
         statsPoints += 1;
         updateStatsText();
     }
-    console.log(statsPoints ,strenght, speed, defense, luck)
 }
 function decreaseDef() {
         if (defense > 1){
@@ -57,7 +55,6 @@ function decreaseDef() {
         statsPoints += 1;
         updateStatsText();
     }
-    console.log(statsPoints ,strenght, speed, defense, luck)
 }
 function decreaseLck() {
         if (luck > 1){
@@ -65,11 +62,9 @@ function decreaseLck() {
         statsPoints += 1;
         updateStatsText();
     }
-    console.log(statsPoints ,strenght, speed, defense, luck)
 }
 ////DecreaseStats////////DecreaseStats////
-
-
+////Functions////////Functions////
 function updateStatsText() {
     document.getElementById('pts').innerText = statsPoints;
     document.getElementById('str').innerText = strenght;
@@ -77,11 +72,55 @@ function updateStatsText() {
     document.getElementById('def').innerText = defense;
     document.getElementById('lck').innerText = luck;
 }
+////Functions////////Functions////
+////Loaders////////Loaders////
+let objectStatsBox = document.getElementById("MainStatsBox");
 
-function deleteMe() {
-    for (let index = 0; index < 2; index++) {    
-       console.log("texto "+ index);
-       document.getElementsByName('DeleteButton')[0].remove();
-    }
+/* StatsBox that should be called when there is availeble points to spend */
+function loadStatsBox() {
+   let element = document.getElementById("MainPlace");
+   element.appendChild(objectStatsBox);
+   updateStatsText();
 }
 
+
+
+
+////Loaders////////Loaders////
+////Deleters////////Deleters////
+function deleteStatsBox() {
+    objectStatsBox.remove();
+}
+////Deleters////////Deleters////
+
+
+/*
+function addElement () { 
+  // create a new div element 
+  var newDiv = document.createElement("div"); 
+  // and give it some content 
+  var newContent = document.createTextNode("Hi there and greetings!"); 
+  // add the text node to the newly created div
+  newDiv.appendChild(newContent);  
+
+  // add the newly created element and its content into the DOM 
+  var currentDiv = document.getElementById(""); 
+  document.body.insertBefore(newDiv, currentDiv); 
+}
+///////////////////////////////////////////
+<html>
+<body>
+<div id="new">
+<p id="p1">Tutorix</p>
+<p id="p2">Tutorialspoint</p>
+</div>
+<script>
+   var tag = document.createElement("p");
+   var text = document.createTextNode("Tutorix is the best e-learning platform");
+   tag.appendChild(text);
+   var element = document.getElementById("new");
+   element.appendChild(tag);
+</script>
+</body>
+</html>
+*/

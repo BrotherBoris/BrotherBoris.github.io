@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/rpg.css">
-    <title>Rpg</title>
+    <link rel="stylesheet" href="assets/css/rpg.css">
+    <title>RPG</title>
 </head>
 <body>
     <header class="Header">
@@ -15,46 +15,53 @@
         </nav>
     </header>
     <main>
-        <!-- SetStatsBox -->
-        <div class="MainStatsBox">
-            <h1>Seus Stats</h1>
-            <p>Preencha os seus stats</p>
-            <div class="InnerStatsBox">
-                <p style="text-align: center;" id="PointsAlert">Pontos disponiveis = <span id="pts">10</span></p>
-                <div>
-                    <button name="DeleteButton" onclick="decreaseStr()">-</button>
-                    <p style="display: inline-block">-Força: <span id="str">1</span></p>
-                    <button name="DeleteButton" onclick="increaseStr()">+</button>
+        <!-- MainPacle -->
+        <div id="MainPlace">
+            <div id="MainStatsBox" class="MainStatsBox">
+                <!-- StatsBox that should be called when there is availeble points to spend -->
+                <h1>Seus Stats</h1>
+                <p>Preencha os seus stats</p>
+                <div class="InnerStatsBox">
+                    <p style="text-align: center;" id="PointsAlert">Pontos disponiveis = <span id="pts">10</span></p>
+                    <div>
+                        <button name="DeleteButton" onclick="decreaseStr()">-</button>
+                        <p style="display: inline-block">-Força: <span id="str">1</span></p>
+                        <button name="DeleteButton" onclick="increaseStr()">+</button>
+                    </div>
+                    <div>
+                        <button name="DeleteButton" onclick="decreaseSpd()">-</button>
+                        <p style="display: inline-block">-Velocidade: <span  id="spd">1</span></p>
+                        <button name="DeleteButton" onclick="increaseSpd()">+</button>
+                    </div>
+                    <div>
+                        <button name="DeleteButton" onclick="decreaseDef()">-</button>
+                        <p style="display: inline-block">-Defesa: <span  id="def">1</span></p>
+                        <button name="DeleteButton" onclick="increaseDef()">+</button>
+                    </div>
+                    <div>
+                        <button name="DeleteButton" onclick="decreaseLck()">-</button>
+                        <p style="display: inline-block">-Sorte: <span  id="lck">1</span></p>
+                        <button name="DeleteButton" onclick="increaseLck()">+</button>
+                    </div>
                 </div>
                 <div>
-                    <button name="DeleteButton" onclick="decreaseSpd()">-</button>
-                    <p style="display: inline-block">-Velocidade: <span  id="spd">1</span></p>
-                    <button name="DeleteButton" onclick="increaseSpd()">+</button>
-                </div>
-                <div>
-                    <button name="DeleteButton" onclick="decreaseDef()">-</button>    
-                    <p style="display: inline-block">-Defesa: <span  id="def">1</span></p>
-                    <button name="DeleteButton" onclick="increaseDef()">+</button>
-                </div>
-                <div>
-                    <button name="DeleteButton" onclick="decreaseLck()">-</button>                    
-                    <p style="display: inline-block">-Sorte: <span  id="lck">1</span></p>
-                    <button name="DeleteButton" onclick="increaseLck()">+</button>                
+            
+                    <button onclick="deleteStatsBox();">Finalizar</button>
                 </div>
             </div>
         </div>
-        <!-- SetStatsBox -->
+        <!-- MainPacle -->
 
-
-        <div class="AmostraBox">
-            <p>a</p>
-            <p class="Amostra4">4</p>
-            <p>a</p>
+        <div id="Texo">
+ 
         </div>
+        <button onclick="loadStatsBox();"></button>
+
     </main>
     <footer class="Footer">
         
     </footer>
-    <script src="/assets/js/game.js"></script>
+    <script src="assets/js/game.js"></script>
+
 </body>
 </html>

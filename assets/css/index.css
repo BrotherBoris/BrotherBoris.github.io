@@ -1,9 +1,9 @@
 h1{font-size: 25px;}h2{font-size: 21px;}h3{font-size: 25px;}p,a{font-size: 21px;}ul{list-style: square;}img{width: 100%;}
-
+a{color: white;text-decoration: none;}
 body
 {
   margin: 0;
-  background: rgb(68, 125, 199);
+  background: #003367;
   /*font stuff*/
   line-height: 1.5;
   color: rgb(255,255,255);
@@ -11,59 +11,35 @@ body
 }
 
 .Header{
-  background: rgb(27, 99, 194);
+  background: #2f3133;
   text-align: center;
   padding: 1%;
+  border-bottom: solid 10px #1e2529;
 }
 
 .Footer{
-  background: rgb(27, 99, 194);
+  background: #00224e;
   padding: 1%;
   text-align: center;
   width: 100%;
   position:absolute;
   bottom:0;
+  
 }
 
-.OuterBox{
-  background: rgb(27, 99, 194);
-  width: 60%;
-  /*padding*/
-  padding: 1%;
-  /*Margin*/
+.Navigation{
+  text-align: center;
+  width: 100%;
+  line-height: 1.5;
   margin: auto;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  /*Border*/
-  border-radius: 10px;
 }
 
-.InnerBox{
-  background: rgb(68, 125, 199);
-  color: rgb(255,255,255);
-  /*padding*/
-  padding: 1%;
-  /*Margin*/
-  margin: auto;
-  margin: 1%;
-  /*Border*/
-  border-radius: 10px;
-}
-
-.CMDBox{
-  background: rgb(0, 0, 0);
-  width: 60%;
-  color: rgb(37, 243, 18);
-  /*padding*/
+.Navigation a{
   padding-left: 1%;
-  padding-top: 1%;
-  /*Margin*/
-  margin: auto;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  /*Border*/
-  border-radius: 8px;
+  padding-right: 1%;
 }
-.CMDBox p{
-  font-size: 15px;
+
+.Navigation a:hover{
+    background-color: rgb(255 , 255, 255, 0.1);
+    border-radius: 10px;
 }
