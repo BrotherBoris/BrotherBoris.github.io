@@ -4,64 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/rpg.css">
     <title>RPG</title>
 </head>
 <body>
-    <header class="Header">
+    <header class="HeaderRPG">
         <h1 id="Title">RPGName</h1>
-        <nav>
+        <nav class="Navigation">
             <a href="index.html">Pagina Principal</a>
         </nav>
     </header>
     <main>
-        <!-- MainPacle -->
+        <!-- DevHeadPlace[Used to test things] -->
+        <div id="DevPlace">
+            <div id="DevBoxAux" class="DevBox">
+                <button onclick="loadStatsBox();">loadStatus</button>
+            </div>
+        </div>
+        <!-- DevHeadPlace -->
+        
+        <!-- MainPacle[Main focus interfaces should be intanciated here] -->
         <div id="MainPlace">
             <div id="MainStatsBox" class="MainStatsBox">
                 <!-- StatsBox that should be called when there is availeble points to spend -->
                 <h1>Seus Stats</h1>
                 <p>Preencha os seus stats</p>
                 <div class="InnerStatsBox">
-                    <p style="text-align: center;" id="PointsAlert">Pontos disponiveis = <span id="pts">10</span></p>
+                    <p style="text-align: center;" >Pontos disponiveis = <span id="pts">10</span></p>
                     <div>
-                        <button name="DeleteButton" onclick="decreaseStr()">-</button>
-                        <p style="display: inline-block">-Força: <span id="str">1</span></p>
-                        <button name="DeleteButton" onclick="increaseStr()">+</button>
+                        <button onclick="decreaseStr()">-</button>
+                        <p style="display: inline-block">Força: <span id="str">1</span></p>
+                        <button onclick="increaseStr()">+</button>
                     </div>
                     <div>
-                        <button name="DeleteButton" onclick="decreaseSpd()">-</button>
-                        <p style="display: inline-block">-Velocidade: <span  id="spd">1</span></p>
-                        <button name="DeleteButton" onclick="increaseSpd()">+</button>
+                        <button onclick="decreaseSpd()">-</button>
+                        <p style="display: inline-block">Velocidade: <span  id="spd">1</span></p>
+                        <button onclick="increaseSpd()">+</button>
                     </div>
                     <div>
-                        <button name="DeleteButton" onclick="decreaseDef()">-</button>
-                        <p style="display: inline-block">-Defesa: <span  id="def">1</span></p>
-                        <button name="DeleteButton" onclick="increaseDef()">+</button>
+                        <button onclick="decreaseDef()">-</button>
+                        <p style="display: inline-block">Defesa: <span  id="def">1</span></p>
+                        <button onclick="increaseDef()">+</button>
                     </div>
                     <div>
-                        <button name="DeleteButton" onclick="decreaseLck()">-</button>
-                        <p style="display: inline-block">-Sorte: <span  id="lck">1</span></p>
-                        <button name="DeleteButton" onclick="increaseLck()">+</button>
+                        <button onclick="decreaseLck()">-</button>
+                        <p style="display: inline-block">Sorte: <span  id="lck">1</span></p>
+                        <button onclick="increaseLck()">+</button>
                     </div>
                 </div>
                 <div>
-            
                     <button onclick="deleteStatsBox();">Finalizar</button>
                 </div>
             </div>
         </div>
         <!-- MainPacle -->
 
-        <div id="Texo">
- 
+        <!-- Right Place/Floater[Secondary or auxiliar interfaces should be intanciated here] -->
+        <div id="RightPlace">
+            
         </div>
-        <button onclick="loadStatsBox();"></button>
-
-    </main>
-    <footer class="Footer">
+        <!-- Right Place/Floater -->
         
-    </footer>
+        <!-- Instantiation Local/Null void[this place is used to manually create all interfaces then store their copies and delete them] -->
+        <div id="NullVoid">
+            
+        </div>
+        <!-- Instantiation Local/Null void -->
+    </main>
     <script src="assets/js/game.js"></script>
-
 </body>
 </html>

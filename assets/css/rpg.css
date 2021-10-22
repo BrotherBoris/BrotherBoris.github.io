@@ -10,27 +10,23 @@ body{
   color: white;
 }
 
-.Header{
+/* .Header{
+  background: #2f3133;
   text-align: center;
   padding: 1%;
   margin-bottom: 5%;
-  background: #2f3133;
   border-bottom: solid 10px #1e2529;
-  
-}
+} */
 
-.Footer{
-  
-}
-
+/*//////////////// Stats Box /////////////////////*/
 .MainStatsBox{
   background: #00224e;
-  width:40%;
+  width:20%;
   text-align: center;
   /*padding*/
   padding: 1%;
   /*Margin*/
-  margin-left: 1%;
+  margin: 1%;
   /*Border*/
   border-radius: 10px;
 }
@@ -39,7 +35,7 @@ body{
   background: #001a38;
   width:100%;
   /*Text*/
-  text-align: left;
+  text-align: center;
   line-height: 2.5;
   /*Border*/
   border-radius: 10px;
@@ -48,13 +44,29 @@ body{
 .InnerStatsBox p{
   font-size: 16px;
 }
-
-.StatsFloater{
-  position: absolute;
-
+/*//////////////// Stats Box /////////////////////*/
+/*//////////////// Generics /////////////////////*/
+.GenericBox{
+  background: #00224e;
+  width:40%;
+  text-align: center;
+  padding: 1%;
+  border-radius: 10px;
+  margin: 5%;
 }
 
+.DevBox{
+  background: #00224e;
+  width: 80%;
+  text-align: center;
+  padding: 1%;
+  border-radius: 10px;
+  margin: auto;
+  
+}
 
+/*//////////////// Generics /////////////////////*/
+/*//////////////// Delete later/////////////////////*/
 .AmostraBox{
   text-align: center;
   width: 40%;
@@ -72,3 +84,4 @@ body{
 /* Amostra 1 = #23395d, #203354, #1c2e4a , #192841, #152238  */
 /* Amostra 2 = #404552, #383c4a, #4b5162, #2594e2, #7c818c */
 /* Amostra 4 = #001a38, #00224e, #003367, #171d20, #1e2529, #2f3133 */
+/*//////////////// Delete later /////////////////////*/
