@@ -83,16 +83,15 @@ function loadStatsBox() {
    updateStatsText();
 }
 
-
-
-
 ////Loaders////////Loaders////
 ////Deleters////////Deleters////
 function deleteStatsBox() {
     objectStatsBox.remove();
 }
 ////Deleters////////Deleters////
+////Initializaztion////////Initializaztion////
 
+////Initializaztion////////Initializaztion////
 
 /*
 function addElement () { 

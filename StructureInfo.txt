@@ -1,0 +1,7 @@
+-------------This file contains all the information about how the site was built-------------
+
+To do:
+-How is it structured
+-Main notes
+-How the js works
+-Take away points

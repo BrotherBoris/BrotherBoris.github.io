@@ -18,6 +18,43 @@ body{
   border-bottom: solid 10px #1e2529;
 } */
 
+/*//////////////// Key points /////////////////////*/
+.MainPlace{
+  margin: 1%;
+}
+
+/* .RightPlace{
+  background: rgb(27, 99, 194);
+  width:35%;
+  position: absolute;
+  
+  text-align: center;
+  
+  padding: 1%;
+  top: 30%;
+  right: 5%;
+  
+  border-radius: 10px;
+} */
+
+.RightPlace{
+  display: inline-block;
+  
+}
+
+.TestDiv{
+  background: #00224e;
+  width:30%;
+  text-align: center;
+  /*padding*/
+  padding: 1%;
+  /*Margin*/
+  
+  /*Border*/
+  border-radius: 10px;
+}
+
+/*//////////////// Key points /////////////////////*/
 /*//////////////// Stats Box /////////////////////*/
 .MainStatsBox{
   background: #00224e;
@@ -26,7 +63,7 @@ body{
   /*padding*/
   padding: 1%;
   /*Margin*/
-  margin: 1%;
+  
   /*Border*/
   border-radius: 10px;
 }
