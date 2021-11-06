@@ -3,6 +3,10 @@ let char = document.getElementById("char");
 
 let charValT = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
 let charValL = parseInt(window.getComputedStyle(char).getPropertyValue("left"));;
+
+let charSizeH = parseInt(window.getComputedStyle(char).getPropertyValue("height"));
+let charSizeW = parseInt(window.getComputedStyle(char).getPropertyValue("width"));
+
 ////CharCriticalInformation////////CharCriticalInformation////
 ////SceneIndormations////////SceneIndormations////
 let scene = document.getElementById("Scene");
@@ -18,55 +22,65 @@ charDisplayL.innerText = charValL;
 ////DispalyTexts////////DispalyTexts////
 ////Walking////////Walking////
 /* ----Moviment Check---- */
-function checkY(objectPos, signal){
-    if(objectPos >= 0 && signal != "-=")
+function checkX(cSize, charValL, boundarieR, signal){
+    if (signal == "-=" && charValT != 0)
+        return true;
+    else if (signal == "+=" && charValT != (cSize + sceneSize - 20))
         return true;
     else
         return false;
-
-
-        //checkar se pode andar negativamente quando esta na posição 0 e quanto esta no limite do mapa - (tamanho_proprio)
 }
 
-function checkZ(){}
+function checkZ(charValT, signal, cSize, sceneSize){
+    if (signal == "-=" && charValT != 0)
+        return true;
+    else if(signal == "+=" && charValT != (cSize + sceneSize - 20))
+        return true;
+    else
+        return false;
+}
 
 /* ----Moviment Check---- */
 function walkUp() {
     let charValT = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
+    if(checkZ(charValT, "-=") == true){
+        charValT -= charSizeH;
 
-    charValT -= 20;
+        charDisplayT.innerText = charValT;
 
-    charDisplayT.innerText = charValT;
-
-    char.style.top = charValT + "px";
+        char.style.top = charValT + "px";   
+    }
 }
 function walkDown(){
     let charValT = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
+    if(checkZ(charValT, "+=", charSizeH, boundariesD) == true){
+        charValT += charSizeH;
 
-    charValT += 20;
+        charDisplayT.innerText = charValT;
 
-    charDisplayT.innerText = charValT;
-
-    char.style.top = charValT+"px";
+        char.style.top = charValT+"px";
+    }
 }
 
 function walkLeft() {
     let charValL = parseInt(window.getComputedStyle(char).getPropertyValue("left"));;
+    if (checkZ(charValL, "-=") == true) {
+        charValL -= charSizeW;
 
-    charValL -= 20;
+        charDisplayL.innerText = charValL;
 
-    charDisplayL.innerText = charValL;
-
-    char.style.left = charValL + "px";
+        char.style.left = charValL + "px";
+    }
 }
 function walkRight() {
     let charValL = parseInt(window.getComputedStyle(char).getPropertyValue("left"));;
+    if (checkZ(charValL, "+=", charSizeW, boundarieR) == true) {
+        charValL += charSizeW;
 
-    charValL += 20;
+        charDisplayL.innerText = charValL;
 
-    charDisplayL.innerText = charValL;
-
-    char.style.left = charValL + "px";
+        char.style.left = charValL + "px";
+    }
 }
 ////Walking////////Walking////
 ////KeyChecker////////KeyChecker////
