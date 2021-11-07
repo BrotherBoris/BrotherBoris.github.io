@@ -1,8 +1,18 @@
 ////CharCriticalInformation////////CharCriticalInformation////
+/* ----Class Instanciation---- */
+let mainChar = new Character();
+
+mainChar.reference = document.getElementById("char");
+mainChar.X = parseInt(window.getComputedStyle(mainChar.Reference).getPropertyValue("left"));
+mainChar.Y = parseInt(window.getComputedStyle(mainChar.Reference).getPropertyValue("top"));
+mainChar.SizeH = parseInt(window.getComputedStyle(mainChar.Reference).getPropertyValue("height"));
+mainChar.SizeW = parseInt(window.getComputedStyle(mainChar.Reference).getPropertyValue("width"));
+
+/* ----Must be replaced---- */
 let char = document.getElementById("char");
 
 let charValT = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
-let charValL = parseInt(window.getComputedStyle(char).getPropertyValue("left"));;
+let charValL = parseInt(window.getComputedStyle(char).getPropertyValue("left"));
 
 let charSizeH = parseInt(window.getComputedStyle(char).getPropertyValue("height"));
 let charSizeW = parseInt(window.getComputedStyle(char).getPropertyValue("width"));
@@ -22,19 +32,10 @@ charDisplayL.innerText = charValL;
 ////DispalyTexts////////DispalyTexts////
 ////Walking////////Walking////
 /* ----Moviment Check---- */
-function checkX(cSize, charValL, boundarieR, signal){
+function checkAxis(position, signal, cSize, sceneSize){
     if (signal == "-=" && charValT != 0)
         return true;
-    else if (signal == "+=" && charValT != (cSize + sceneSize - 20))
-        return true;
-    else
-        return false;
-}
-
-function checkZ(charValT, signal, cSize, sceneSize){
-    if (signal == "-=" && charValT != 0)
-        return true;
-    else if(signal == "+=" && charValT != (cSize + sceneSize - 20))
+    else if(signal == "+=" && position != (cSize + sceneSize - 20))
         return true;
     else
         return false;
@@ -43,7 +44,7 @@ function checkZ(charValT, signal, cSize, sceneSize){
 /* ----Moviment Check---- */
 function walkUp() {
     let charValT = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
-    if(checkZ(charValT, "-=") == true){
+    if(checkAxis(charValT, "-=") == true){
         charValT -= charSizeH;
 
         charDisplayT.innerText = charValT;
@@ -53,7 +54,7 @@ function walkUp() {
 }
 function walkDown(){
     let charValT = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
-    if(checkZ(charValT, "+=", charSizeH, boundariesD) == true){
+    if(checkAxis(charValT, "+=", charSizeH, boundariesD) == true){
         charValT += charSizeH;
 
         charDisplayT.innerText = charValT;
@@ -64,7 +65,7 @@ function walkDown(){
 
 function walkLeft() {
     let charValL = parseInt(window.getComputedStyle(char).getPropertyValue("left"));;
-    if (checkZ(charValL, "-=") == true) {
+    if (checkAxis(charValL, "-=") == true) {
         charValL -= charSizeW;
 
         charDisplayL.innerText = charValL;
@@ -74,7 +75,7 @@ function walkLeft() {
 }
 function walkRight() {
     let charValL = parseInt(window.getComputedStyle(char).getPropertyValue("left"));;
-    if (checkZ(charValL, "+=", charSizeW, boundarieR) == true) {
+    if (checkAxis(charValL, "+=", charSizeW, boundarieR) == true) {
         charValL += charSizeW;
 
         charDisplayL.innerText = charValL;
