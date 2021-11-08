@@ -1,3 +1,4 @@
+////Character////////Character////
 class Character {
     constructor(){
         this.reference;
@@ -41,5 +42,35 @@ class Character {
     }
     ////setters////////setters///
 }
-
-
+////Character////////Character////
+////Scene////////Scene////
+class Scene{
+    constructor(){
+        this.reference;
+        this.boundsX;
+        this.boundsY;
+    }
+    ////getters////////getters////
+    set Reference(ref){
+        this.reference = ref;
+    }
+    set BoundsX(x){
+        this.boundsX = x;
+    }
+    set BoundsY(y){
+        this.boundsY = y;
+    }    
+    ////getters////////getters////
+    ////setters////////setters////
+    get Reference(){
+        return this.reference;
+    }    
+    get BoundsX(){
+        return this.boundsX;
+    }    
+    get BoundsY(){
+        return this.boundsY;
+    }    
+    ////setters////////setters////
+}
+////Scene////////Scene////
