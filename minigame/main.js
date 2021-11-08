@@ -32,10 +32,10 @@ charDisplayL.innerText = charValL;
 ////DispalyTexts////////DispalyTexts////
 ////Walking////////Walking////
 /* ----Moviment Check---- */
-function checkAxis(position, signal, cSize, sceneSize){
-    if (signal == "-=" && charValT != 0)
+function checkAxis(position, signal, charSize, sceneSize){
+    if (signal == "-=" && position != 0)
         return true;
-    else if(signal == "+=" && position != (cSize + sceneSize - 20))
+    else if(signal == "+=" && position != (charSize + sceneSize - 20))
         return true;
     else
         return false;
@@ -43,44 +43,48 @@ function checkAxis(position, signal, cSize, sceneSize){
 
 /* ----Moviment Check---- */
 function walkUp() {
-    let charValT = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
-    if(checkAxis(charValT, "-=") == true){
-        charValT -= charSizeH;
+    mainChar.Y = parseInt(window.getComputedStyle(mainChar.Reference).getPropertyValue("top"));
+    if(checkAxis(mainChar.Y, "-=") == true){
+        mainChar.Y -= mainChar.SizeH;
+    
+        //DELETE LATER - display the cords on screen       
+        charDisplayT.innerText = mainChar.Y;
 
-        charDisplayT.innerText = charValT;
-
-        char.style.top = charValT + "px";   
+        mainChar.Reference.style.top = mainChar.Y + "px";   
     }
 }
 function walkDown(){
-    let charValT = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
-    if(checkAxis(charValT, "+=", charSizeH, boundariesD) == true){
-        charValT += charSizeH;
+    mainChar.Y = parseInt(window.getComputedStyle(mainChar.Reference).getPropertyValue("top"));
+    if(checkAxis(mainChar.Y, "+=", mainChar.SizeH, boundariesD) == true){
+        mainChar.Y += mainChar.SizeH;
+        
+        //DELETE LATER - display the cords on screen
+        charDisplayT.innerText = mainChar.Y;
 
-        charDisplayT.innerText = charValT;
-
-        char.style.top = charValT+"px";
+        mainChar.Reference.style.top = mainChar.Y+"px";
     }
 }
 
 function walkLeft() {
-    let charValL = parseInt(window.getComputedStyle(char).getPropertyValue("left"));;
-    if (checkAxis(charValL, "-=") == true) {
-        charValL -= charSizeW;
+    mainChar.X = parseInt(window.getComputedStyle(mainChar.Reference).getPropertyValue("left"));;
+    if (checkAxis(mainChar.X, "-=") == true) {
+        mainChar.X -= mainChar.SizeW;
+        
+        //DELETE LATER - display the cords on screen
+        charDisplayL.innerText = mainChar.X;
 
-        charDisplayL.innerText = charValL;
-
-        char.style.left = charValL + "px";
+        mainChar.Reference.style.left = mainChar.X + "px";
     }
 }
 function walkRight() {
-    let charValL = parseInt(window.getComputedStyle(char).getPropertyValue("left"));;
-    if (checkAxis(charValL, "+=", charSizeW, boundarieR) == true) {
-        charValL += charSizeW;
+    mainChar.X = parseInt(window.getComputedStyle(mainChar.Reference).getPropertyValue("left"));;
+    if (checkAxis(mainChar.X, "+=", mainChar.SizeW, boundarieR) == true) {
+        mainChar.X += mainChar.SizeW;
+        
+        //DELETE LATER - display the cords on screen
+        charDisplayL.innerText = mainChar.X;
 
-        charDisplayL.innerText = charValL;
-
-        char.style.left = charValL + "px";
+        mainChar.Reference.style.left = mainChar.X + "px";
     }
 }
 ////Walking////////Walking////
