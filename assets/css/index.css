@@ -20,24 +20,6 @@ body{
   border-bottom: solid 10px #1e2529;
 }
 
-/* -----Rpg instance----- */
-.HeaderRPG{
-  background: #2f3133;
-  text-align: center;
-  width: 100%;
-  padding-top: 1%;
-  border-bottom: solid 10px #1e2529;
-}
-
-/* -----without margin----- */
-.HeaderMarginless{
-  background: #2f3133;
-  text-align: center;
-  width: 100%;
-  padding-top: 1%;
-  border-bottom: solid 10px #1e2529;
-}
-
 .Footer{
   background: #00224e;
   padding: 1%;

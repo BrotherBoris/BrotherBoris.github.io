@@ -21,7 +21,16 @@
     width: 10px;
     height: 10px;
     background-color: blue;
-    position: relative;
+    position:relative;
     top: 0px;
     left: 0px;
+}
+
+#tile1{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    top: 0px;
+    left: 0px;
+    background-color: green;
 }
