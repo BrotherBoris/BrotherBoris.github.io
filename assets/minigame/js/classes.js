@@ -66,7 +66,7 @@ class Scene{
         return this.reference;
     }    
     get BoundsX(){
-        return this.boundsX;
+        return this.boundsX;    
     }    
     get BoundsY(){
         return this.boundsY;
@@ -74,3 +74,20 @@ class Scene{
     ////setters////////setters////
 }
 ////Scene////////Scene////
+
+//função construtora -> tambem cria objetos - inicia com letra maiuscula
+
+function Pessoa(nome, sobrenome) {
+
+    const ID = 12345;//é um atributo do obj que não vai pode ser chamado tipo um Private do Java
+
+    this.nome = nome;//pode ser acessado de fora
+    this.sobrenome = sobrenome;
+    this.metodo = () => {//metodo dentro da função construtora
+        console.log('metodo');
+    }
+}
+
+//new cria um novo obj e faz o this apontar para ele - logo como a função acima, as construtoras não precisam retornar
+const p1 = new Pessoa('joão', 'antonio');//funções construtoras tem que necessariamente usar o new
+console.log(p1.metodo());
