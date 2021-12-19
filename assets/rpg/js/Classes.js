@@ -8,6 +8,7 @@ class Entity{
         this.speed = speed;
         this.defense = defense;
         this.luck = luck;
+        this.hunger = 100;
     }
 
 }
@@ -19,7 +20,6 @@ class Protagonist extends Entity{
         this.gold = gold;
         this.xp =0;
     }
-
 }
 /* Enemies */
 class Enemie extends Entity{
@@ -34,7 +34,7 @@ class Enemie extends Entity{
 ////Character////////Character////
 ////Cave////////Cave////
 class Cave{
-    constructor(caveName, type, biome, isSafeZone, minExits, description) {
+    constructor(caveName, type, biome, isSafeZone, minExits, description, foodCount) {
         this.caveName = caveName;
         this.type = type;
         this.biome = biome;
@@ -42,6 +42,8 @@ class Cave{
         this.minExits = minExits
         this.description = description;
         this.enemieCount;
+        this.foodCount = foodCount;
     }
+    
 }
 ////Cave////////Cave////

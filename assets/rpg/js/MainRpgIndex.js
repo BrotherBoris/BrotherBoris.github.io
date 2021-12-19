@@ -19,11 +19,22 @@ let devil = new Enemie(50, "Infernal Devil", 5, 5, 1, 2, "DEVIL", 52)
 bandid.biomes = ["Treasury"]
 
 /* Caves */
-let startingRoom = new Cave("Strange cave", "Starting", "Smoothy", true, 1, "A very strange cave with smooth walls.");
-let treasureRoom = new Cave("Treasure cave", "Treasure", "Treasury", false, 2, "A cave with shinny walls and valuables laying around.")
-let moistRoom = new Cave("Moisty cave", "Battle", "Moisty", false, 2, "A humid cave with many plant life, puddles and a fishy stench...");
+let startingRoom = new Cave("Strange cave", "Starting", "Smoothy", true, 1, 
+    "A very strange cave with smooth walls.", "none");
+let treasureRoom = new Cave("Treasure cave", "Treasure", "Treasury", false, 2, 
+    "A cave with shinny walls and valuables laying around.", "low")
+let moistRoom = new Cave("Moisty cave", "Battle", "Moisty", false, 2, 
+    "A humid cave with many plant life, puddles and a fishy stench...", "high");
+let sandRoom = new Cave("Sandy cave", "Battle", "Sandy", false, 1, 
+    "A cave overran with sand, you can see bones comming out of the walls..." , "none");
+let MinesRoom = new Cave("The Mines", "Battle", "Mine", false, 5, 
+    "A central cave with ores and a lot of exits, bones and mining gear litter the place...", "mid");
+let rockyRoom = new Cave("Rocky cave", "Battle", "Rocky", false, 2, 
+    "A Rocky cave with rought surfaces, red sand falls from the ceiling...", "none");
 
 enemyIndex =[crab, bandid, devil];
+caveIndex = [treasureRoom, moistRoom, sandRoom, MinesRoom, rockyRoom];
+
 ////Instances////////Instances////
 
 
