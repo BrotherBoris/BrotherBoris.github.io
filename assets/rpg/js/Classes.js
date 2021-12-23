@@ -19,6 +19,9 @@ class Protagonist extends Entity{
         this.statusPoints = statusPoints;
         this.gold = gold;
         this.xp =0;
+        this.totalXp;
+        this.totalGold;
+        this.survivedCaves;
     }
 }
 /* Enemies */

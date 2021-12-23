@@ -1,6 +1,6 @@
 //Generates a room Template
 function GenerateRoomTemplate(template) {
-    let linePointer=6;
+    let linePointer=3;
     if(template.isSafeZone != true){
         //Spawn enemies
         
@@ -8,17 +8,9 @@ function GenerateRoomTemplate(template) {
     //Spawn exits
     let exitCount = getRandomInt(template.minExits, (template.minExits+2));
     //Create the menu base
-    CreateMenuOnTheFly(Container, template.biome + "Cave", template.caveName, (7+exitCount));
-    //Set the player condition
-    document.getElementById(template.biome + "Cave_Line_1").innerText = "HP:"+player.health+
-        " |Hunger:"+player.hunger+"/100"+" |Gold:"+player.gold;
-    //Set the player stats
-    document.getElementById(template.biome + "Cave_Line_2").innerText = "Xp:"+player.xp +"/100"+"|Str:"+
-        player.strenght+"|Spd:"+player.speed+"|Def:"+player.defense+"|Lck:"+player.luck;
-    document.getElementById(template.biome + "Cave_Line_3").innerText = "-----------------|";
-
-    document.getElementById(template.biome + "Cave_Line_4").innerText = player.name + " enters the cave, it is...";
-    document.getElementById(template.biome + "Cave_Line_5").innerText = template.description;
+    CreateMenuOnTheFly(Container, template.biome + "Cave", template.caveName, (4+exitCount));
+    document.getElementById(template.biome + "Cave_Line_1").innerText = player.name + " enters the cave, it is...";
+    document.getElementById(template.biome + "Cave_Line_2").innerText = template.description;
 
     document.getElementById(template.biome + "Cave_Line_"+linePointer).innerText = "What will you do?";
     linePointer++;
@@ -32,7 +24,8 @@ function GenerateRoomTemplate(template) {
         console.log("created a exit");
         document.getElementById(template.biome + "Cave_Line_" + linePointer).appendChild
             (ReturnBtn("Exit" + (index + 1), "Exit through hole number " + (index + 1) + " (" + hungercost+" Hunger)",
-                function () { DeleteMenu(template.biome + "Cave"); Navigate(player, template.biome, hungercost);}));
+                function () { DeleteMenu("AuxMenu");DeleteMenu(template.biome + "Cave");StatusMenu();
+                    Navigate(player, template.biome, hungercost);}));
         linePointer++;
     }
 }
@@ -46,21 +39,22 @@ function GenerateStartingRoom(charN) {
     document.getElementById("StartingRoom_Line_5").innerText = "Some actions will drain it too, until you fall limp and life-less.";
     document.getElementById("StartingRoom_Line_6").innerText = "How many caves you can go throught before dying in this nighmare?...";
     document.getElementById("StartingRoom_Line_7").innerText = "Is there a end to this?.......";
-    document.getElementById("StartingRoom_Line_8").appendChild(ReturnBtn("Exit", "Go throught the exit", function () { GenerateRoomTemplate(moistRoom); DeleteMenu("StartingRoom")}));
+    document.getElementById("StartingRoom_Line_8").appendChild(ReturnBtn("Exit", "Go throught the exit",
+        function () { StatusMenu();GenerateRoomTemplate(moistRoom);DeleteMenu("StartingRoom")}));
 }
 //Navigate function
 function Navigate(protagonist, lastBiome, hungercost) {
     let choosenCave;
     if (protagonist.hunger < 1) {
+        DeleteMenu("AuxMenu");
         GameOverScreen();
     } else if ((protagonist.hunger - hungercost) < 1) {
+        DeleteMenu("AuxMenu");
         GameOverScreen();
     }else{
         protagonist.hunger -= hungercost;
         do {
             choosenCave = getRandomInt(0, (caveIndex.length - 1));
-            if (caveIndex[choosenCave].biome == lastBiome) {
-            }
         } while (caveIndex[choosenCave].biome == lastBiome);
         GenerateRoomTemplate(caveIndex[choosenCave]);
     }
@@ -77,6 +71,10 @@ function GameOverScreen() {
     document.getElementById("Endgame_Line_6").innerText = player.name+" survived survivalCount caves...";
     document.getElementById("Endgame_Line_7").innerText = "..."+player.name+" accumulated a total of coinsTotalCount coins.";
     document.getElementById("Endgame_Line_8").innerText = "...this is the end of " + player.name+"...";
+    CreateMenuOnTheFly(Container,"a","End",2);
+    document.getElementById("a"+"_Line_1").innerText = "Return to the main menu";
+    document.getElementById("a" + "_Line_2").appendChild(ReturnBtn("btn", "Return",
+        function () { DeleteMenu("Endgame"); DeleteMenu("a"); CreateMainMenu(Container, userName);ResetChar();}));
 }
 
 //Generates a Treasure room
@@ -96,6 +94,16 @@ function updateTheFight(templater) {
 }
 
 ////Utility////////Utility////
+/* creates a auxiliar menu */
+function StatusMenu() {
+    CreateMenuOnTheFly(Container, "AuxMenu", "////",2);
+    document.getElementById("AuxMenu" + "_Line_1").innerText = "HP:" + player.health +
+        " |Hunger:" + player.hunger + "/100" + " |Gold:" + player.gold;
+    document.getElementById("AuxMenu" + "_Line_2").innerText = "Xp:" + player.xp + "/100" + "|Str:" +
+        player.strenght + "|Spd:" + player.speed + "|Def:" + player.defense + "|Lck:" + player.luck;   
+}
+
+
 function Scavange(cave, protagonist) {
 //Food check
     let foodCount, foodScav, satiation;
@@ -126,6 +134,8 @@ function Scavange(cave, protagonist) {
         console.log("you are "+satiation);
     }
     console.log(foodScav+" "+foodCount);
+    document.getElementById("AuxMenu" + "_Line_1").innerText = "HP:" + player.health +
+        " |Hunger:" + player.hunger + "/100" + " |Gold:" + player.gold;
 }
 
 function SpawnEnemies(count) {

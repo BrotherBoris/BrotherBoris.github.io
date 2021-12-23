@@ -1,6 +1,21 @@
 let Container = document.getElementById("Main-Container");
 let userName = "";
 
+//resets the protagonist
+function ResetChar() {
+    player.name = "";
+    player.health = 100;
+    player.hunger = 100;
+    player.strenght = 1;
+    player.speed = 1;
+    player.defense = 1;
+    player.luck = 1;
+    player.statusPoints = 10;
+    player.gold = 15
+    player.xp = 0;
+}
+
+
 ////Instances////////Instances////
 /*---- Instances of the classes ----*/
 /* The player */
