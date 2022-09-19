@@ -1,0 +1,18 @@
+:root{
+    --backGround: #000000;
+    --fontColor: #ffffff;
+}
+
+
+h1{font-size: 25px;}h2{font-size: 21px;}h3{font-size: 19px;}p,a{font-size: 18px;}a{text-decoration: none;}
+ul{list-style: none;}img{width: 100%;max-width: 185px;max-height: 185px;}
+input{all: unset;cursor:pointer;border-radius: 0px;padding-left: 0px;padding-right: 0px;}
+input:disabled{cursor:not-allowed}
+button{all: unset;cursor:pointer;border-radius: 0px;padding-left: 0px;padding-right: 0px;}
+button:disabled{cursor:not-allowed}
+select{all: unset; padding-left: 0px; padding-right: 0px; color: unset; border-radius: 0px;}
+
+body{
+    backGround: var(--backGround);
+    color: var(--fontColor);
+}
